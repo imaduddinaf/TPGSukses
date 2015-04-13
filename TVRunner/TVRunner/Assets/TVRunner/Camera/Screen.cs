@@ -6,7 +6,10 @@ public class Screen : MonoBehaviour {
 	public float velocity;
 	// Use this for initialization
 	void Start () {
-	
+		Runner2D runner = GetComponent<Runner2D> ();
+		if (runner != null) {
+			velocity = runner.velocity;
+		}
 	}
 	
 	// Update is called once per frame

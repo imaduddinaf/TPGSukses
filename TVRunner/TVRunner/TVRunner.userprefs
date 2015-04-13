@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\Runner2D.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\Battery\script\healthbar.cs">
     <Files>
-      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="20" Column="57" />
+      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="31" Column="4" />
       <File FileName="Assets\TVRunner\Camera\Screen.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Menu\Menu.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Runner\Battery\script\healthbar.cs" Line="17" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

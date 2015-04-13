@@ -47,7 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\TVRunner\Camera\Screen.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Menu.cs" />
      <Compile Include="Assets\TVRunner\Runner\3D\Runner.cs" />
+     <Compile Include="Assets\TVRunner\Runner\Battery\script\healthbar.cs" />
+     <Compile Include="Assets\TVRunner\Runner\Battery\script\item.cs" />
+     <Compile Include="Assets\TVRunner\Runner\Battery\script\player.cs" />
+     <Compile Include="Assets\TVRunner\Runner\Battery\script\text.cs" />
      <Compile Include="Assets\TVRunner\Runner\Runner2D.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
