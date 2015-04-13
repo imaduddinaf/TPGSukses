@@ -40,9 +40,9 @@ public class item : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.name == "Runner 2D")
 		{
+			Destroy(gameObject);
 			Transform efek = Instantiate(itemget,transform.position,transform.rotation) as Transform;
 			Destroy(efek.gameObject,1f);
-			Destroy(gameObject);
 			playerr.AddEnergy(energyValue);
 		}
 	}

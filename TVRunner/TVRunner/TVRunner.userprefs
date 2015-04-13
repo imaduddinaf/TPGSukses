@@ -1,20 +1,12 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\Runner2D.cs">
     <Files>
-      <File FileName="Assets\TVRunner\Runner\player.cs" Line="14" Column="13" />
-      <File FileName="Assets\TVRunner\Battery\healthbar.cs" Line="18" Column="57" />
-      <File FileName="Assets\TVRunner\Item\item.cs" Line="41" Column="40" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Menu\Ingame\IngameMenu.cs">
-    <Files>
-      <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="31" Column="3" />
-      <File FileName="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Battery\healthbar.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Item\item.cs" Line="45" Column="32" />
+      <File FileName="Assets\TVRunner\Runner\player.cs" Line="33" Column="23" />
       <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\TVRunner\Camera\Screen.cs" Line="1" Column="1" />
->>>>>>> c38f402b82f061830b6dd43d6ea07ed88e520631
+      <File FileName="Assets\TVRunner\Item\text.cs" Line="41" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

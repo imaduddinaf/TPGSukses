@@ -9,9 +9,11 @@ public class player : MonoBehaviour {
 	//public GUIText scoreText;
 	public TextMesh Test;
 	public int energy;
+	private int maxenergy;
 	public int playervalue;
 	void Start () {
 		energy = 20;
+		maxenergy = energy;
 		InvokeRepeating("DecreaseBattery", 1f, 1f);
 		UpdateBattery ();
 		playervalue = Random.Range (1, 10);
@@ -27,6 +29,8 @@ public class player : MonoBehaviour {
 
 	public void AddEnergy (int newEnergyValue){
 		energy += newEnergyValue;
+		if (energy > maxenergy)
+			energy = maxenergy;
 		UpdateBattery ();
 	}
 

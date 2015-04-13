@@ -29,16 +29,16 @@ public class text : MonoBehaviour {
 
 	void fixpos(){
 		if (itemm.bilangan1 >= 10 && itemm.bilangan2 >= 10) {
-			print (itemm.bilangan1);
+			//print (itemm.bilangan1);
 			//posX = 1;
 			//textfield.position = new Vector2 (posX, posY);
 		} else if (itemm.bilangan1 < 10 && itemm.bilangan2 < 10) {
 			//textfield.position = new Vector2 (-0.7f, posY);
-			print ("as");
+			//print ("as");
 		} 
 		else {
 			//textfield.position = new Vector2 (0.8f, posY);
-			print ("das");
+			//print ("das");
 		}
 	}
 }
