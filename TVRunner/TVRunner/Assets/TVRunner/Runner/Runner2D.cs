@@ -14,9 +14,13 @@ public class Runner2D : MonoBehaviour {
 		Time.timeScale = 0;
 	}
 
-	void Jump() {
+	public void Jump() {
 		Debug.Log("jumped");
 		GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight));
+	}
+
+	void NextLevel() {
+		Application.LoadLevel(Application.loadedLevel);
 	}
 
 	// Use this for initialization
@@ -32,9 +36,6 @@ public class Runner2D : MonoBehaviour {
 		}
 		//move runner
 		transform.Translate(velocity * Time.deltaTime, 0f, 0f);
-		if (GetComponent<Transform>().position.x > 200) {
-			Application.LoadLevel(Application.loadedLevel);
-		}
 		if (tmpX < GetComponent<Transform> ().position.x) {
 			//Die ();
 		}
@@ -48,15 +49,16 @@ public class Runner2D : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
-		if (col.gameObject.name == "Spike 2D" || col.gameObject.name == "Box 2D Die") {
+		if (col.gameObject.tag == "spike" || col.gameObject.tag == "box die") {
 			Die ();
-		}
-		if (col.gameObject.name == "Portal") {
-			Application.LoadLevel(Application.loadedLevel);
 		}
 	}
 	
 	void OnCollisionEnter2D (Collision2D col) {
+		if (col.gameObject.tag == "portal") {
+			Debug.Log("Next Level");
+			NextLevel();
+		}
 		touchingPlatform = true;
 	}
 	
