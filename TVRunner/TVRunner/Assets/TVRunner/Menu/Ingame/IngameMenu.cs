@@ -26,4 +26,8 @@ public class IngameMenu : MonoBehaviour {
 			Application.Quit();
 		}
 	}
+
+	void OnGUI(){
+
+	}
 }
