@@ -18,8 +18,6 @@ public class text : MonoBehaviour {
 		if (itemm == null){
 			Debug.Log ("Cannot find 'item' script");
 		}
-		posY = textfield.position.y;
-		posX = textfield.position.x;
 	}
 	
 	// Update is called once per frame

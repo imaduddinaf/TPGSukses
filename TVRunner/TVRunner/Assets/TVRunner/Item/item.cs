@@ -37,6 +37,16 @@ public class item : MonoBehaviour {
 		//vel = playerr.playervalue;
 		//Tester.text = "random2: " + vel;
 	}
+
+	void OnTriggerEnter2D(Collider2D coll){
+		if(coll.gameObject.name == "Runner 2D")
+		{
+			Destroy(gameObject);
+			Transform efek = Instantiate(itemget,transform.position,transform.rotation) as Transform;
+			Destroy(efek.gameObject,1f);
+			playerr.AddEnergy(energyValue);
+		}
+	}
 	void OnCollisionEnter2D(Collision2D coll){
 		if(coll.gameObject.name == "Runner 2D")
 		{

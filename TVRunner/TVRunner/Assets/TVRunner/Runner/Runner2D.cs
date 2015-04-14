@@ -11,7 +11,8 @@ public class Runner2D : MonoBehaviour {
 	//behaviour
 	void Die() {
 		Debug.Log("Trigger Die");
-		Time.timeScale = 0;
+		//Time.timeScale = 0;
+		Application.LoadLevel ("Main Menu");
 	}
 
 	public void Jump() {
@@ -43,7 +44,7 @@ public class Runner2D : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (touchingPlatform && (Input.GetButtonDown ("Jump") || Input.touchCount > 0)) {
+		if (touchingPlatform && (Input.GetKeyDown("space")/*GetButtonDown ("Jump")*/ || Input.touchCount > 0)) {
 			Jump();
 		}
 	}
