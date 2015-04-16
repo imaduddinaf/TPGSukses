@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void OnClickPlay(){
-		Application.LoadLevel ("Level Tes");
+		Application.LoadLevel ("World Map");
 	}
 
 	public void OnClickDie(){

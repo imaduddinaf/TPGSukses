@@ -45,6 +45,7 @@ public class item : MonoBehaviour {
 			Transform efek = Instantiate(itemget,transform.position,transform.rotation) as Transform;
 			Destroy(efek.gameObject,1f);
 			playerr.AddEnergy(energyValue);
+			Debug.Log("Asdasd : " + energyValue);
 		}
 	}
 	void OnCollisionEnter2D(Collision2D coll){

@@ -52,6 +52,7 @@
      <Compile Include="Assets\TVRunner\Item\text.cs" />
      <Compile Include="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" />
      <Compile Include="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" />
+     <Compile Include="Assets\TVRunner\Menu\World Map\WorldMap.cs" />
      <Compile Include="Assets\TVRunner\Runner\3D\Runner.cs" />
      <Compile Include="Assets\TVRunner\Runner\Runner2D.cs" />
      <Compile Include="Assets\TVRunner\Runner\player.cs" />

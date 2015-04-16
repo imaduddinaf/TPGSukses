@@ -15,7 +15,7 @@ public class Runner2D : MonoBehaviour {
 		Application.LoadLevel ("Main Menu");
 	}
 
-	public void Jump() {
+	void Jump() {
 		Debug.Log("jumped");
 		GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight));
 	}

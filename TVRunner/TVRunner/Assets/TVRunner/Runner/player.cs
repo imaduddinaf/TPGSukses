@@ -23,7 +23,7 @@ public class player : MonoBehaviour {
 	void Update () {
 		UpdateBattery ();
 		if (energy == 0){
-			Application.LoadLevel(0);
+			//Application.LoadLevel(0);
 		}
 	}
 
