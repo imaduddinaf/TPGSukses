@@ -55,6 +55,7 @@
      <Compile Include="Assets\TVRunner\Runner\3D\Runner.cs" />
      <Compile Include="Assets\TVRunner\Runner\Runner2D.cs" />
      <Compile Include="Assets\TVRunner\Runner\player.cs" />
+     <Compile Include="Assets\TVRunner\Spawner.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
