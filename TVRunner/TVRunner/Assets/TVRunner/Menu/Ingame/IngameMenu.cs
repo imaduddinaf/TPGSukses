@@ -25,6 +25,9 @@ public class IngameMenu : MonoBehaviour {
 			//Time.timeScale = 0;
 			Application.Quit();
 		}
+		/*if (Input.GetKeyDown ("space")) {
+			Debug.Log("space pressed");
+		}*/
 	}
 
 	void OnGUI(){

@@ -12,6 +12,7 @@ public class Runner2D : MonoBehaviour {
 	void Die() {
 		Debug.Log("Trigger Die");
 		//Time.timeScale = 0;
+		MasterData.currentLevel = 0;
 		Application.LoadLevel ("Main Menu");
 	}
 
@@ -21,12 +22,13 @@ public class Runner2D : MonoBehaviour {
 	}
 
 	void NextLevel() {
+		MasterData.currentLevel += 1;
 		Application.LoadLevel(Application.loadedLevel);
 	}
 
 	// Use this for initialization
 	void Start () {
-		tmpX = GetComponent<Transform> ().position.x;
+
 	}
 	
 	// Update is called once per frame
@@ -37,10 +39,6 @@ public class Runner2D : MonoBehaviour {
 		}
 		//move runner
 		transform.Translate(velocity * Time.deltaTime, 0f, 0f);
-		if (tmpX < GetComponent<Transform> ().position.x) {
-			//Die ();
-		}
-		tmpX = GetComponent<Transform> ().position.x;
 	}
 
 	void FixedUpdate(){

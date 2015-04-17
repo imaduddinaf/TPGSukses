@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour {
 
 	public void OnClickPlay(){
 		Application.LoadLevel ("World Map");
+		MasterData.WriteToFile ();
 	}
 
 	public void OnClickDie(){
