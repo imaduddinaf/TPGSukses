@@ -6,32 +6,38 @@ public class player : MonoBehaviour {
 
 	// Use this for initialization
 	public float movespeed;
-	//public GUIText scoreText;
 	public TextMesh Test;
 	public int energy;
-	private int maxenergy;
-	public int playervalue;
+	private int maxEnergy;
+	public int playerValue;
+	public string currentLevel;
+
 	void Start () {
-		energy = 20;
-		maxenergy = energy;
-		InvokeRepeating("DecreaseBattery", 1f, 1f);
-		UpdateBattery ();
-		playervalue = Random.Range (1, 10);
-		Test.text = "" + playervalue;
+		energy = 15;
+		maxEnergy = energy;
+		if (Application.loadedLevelName == "Tutorial") 
+			InvokeRepeating("DecreaseBattery", 18f, 1f);
+		else 
+			InvokeRepeating("DecreaseBattery", 1f, 1f);
+		//UpdateBattery ();
+		playerValue = Random.Range (1, 10);
+		Test.text = "" + playerValue;
 	}
 
 	void Update () {
-		UpdateBattery ();
+		//UpdateBattery ();
+		//Debug.Log ("energy : " +energy);
 		if (energy == 0){
-			//Application.LoadLevel(0);
+			currentLevel = Application.loadedLevelName;
+			Application.LoadLevel(currentLevel);
 		}
 	}
 
 	public void AddEnergy (int newEnergyValue){
 		energy += newEnergyValue;
-		if (energy > maxenergy)
-			energy = maxenergy;
-		UpdateBattery ();
+		if (energy > maxEnergy)
+			energy = maxEnergy;
+		//UpdateBattery ();
 	}
 
 	void UpdateBattery (){
@@ -40,4 +46,6 @@ public class player : MonoBehaviour {
 	void DecreaseBattery(){
 		energy--;
 	}
+
+
 }

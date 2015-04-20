@@ -23,12 +23,11 @@ public class Runner2D : MonoBehaviour {
 
 	void NextLevel() {
 		MasterData.currentLevel += 1;
-		Application.LoadLevel(Application.loadedLevel);
+		Application.LoadLevel(Application.loadedLevel+1);
 	}
 
 	// Use this for initialization
 	void Start () {
-
 	}
 	
 	// Update is called once per frame

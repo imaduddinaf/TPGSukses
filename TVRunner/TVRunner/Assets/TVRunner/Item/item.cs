@@ -8,12 +8,13 @@ public class item : MonoBehaviour {
 	private int energyValue;
 	private player playerr;
 	//public GUIText Tester;
-	public TextMesh displaytext;
+	public TextMesh displayText;
 	//private int vel;
-	private int inoperasi;
+	private int inOperasi;
 	public int bilangan1;
 	public int bilangan2;
-	public Transform itemget;
+	public Transform itemParticle;
+
 
 	void Start () {
 		GameObject playerrObject = GameObject.Find ("Runner 2D");
@@ -23,11 +24,7 @@ public class item : MonoBehaviour {
 		if (playerr == null){
 			Debug.Log ("Cannot find 'player' script");
 		}
-		//vel = playerr.playervalue;
-		//Tester.text = "random2: " + vel;
-		Invoke("getovel",0f);
-		//getovel ();
-		//boo.text = "test";
+		Invoke("getOperasi",0f);
 
 	}
 
@@ -42,7 +39,7 @@ public class item : MonoBehaviour {
 		if(coll.gameObject.name == "Runner 2D")
 		{
 			Destroy(gameObject);
-			Transform efek = Instantiate(itemget,transform.position,transform.rotation) as Transform;
+			Transform efek = Instantiate(itemParticle,transform.position,transform.rotation) as Transform;
 			Destroy(efek.gameObject,1f);
 			playerr.AddEnergy(energyValue);
 			Debug.Log("Asdasd : " + energyValue);
@@ -52,81 +49,81 @@ public class item : MonoBehaviour {
 		if(coll.gameObject.name == "Runner 2D")
 		{
 			Destroy(gameObject);
-			Transform efek = Instantiate(itemget,transform.position,transform.rotation) as Transform;
+			Transform efek = Instantiate(itemParticle,transform.position,transform.rotation) as Transform;
 			Destroy(efek.gameObject,1f);
 			playerr.AddEnergy(energyValue);
 		}
 	}
 
-	void getovel(){
+	void getOperasi(){
 		//vel = playerr.playervalue;
 		if (type == true) {
 			energyValue = 5;
-			inoperasi = Random.Range (1, 5);
-			if (inoperasi == 1) {
-				bilangan1 = Random.Range (1, playerr.playervalue);
-				bilangan2 = playerr.playervalue - bilangan1;
-				displaytext.text = bilangan1 + " + " + bilangan2;
-			} else if (inoperasi == 2) {
-				bilangan1 = Random.Range (playerr.playervalue + 1, 99);
-				bilangan2 = bilangan1 - playerr.playervalue;
-				displaytext.text = bilangan1 + " - " + bilangan2;
-			} else if (inoperasi == 3) {
+			inOperasi = Random.Range (1, 5);
+			if (inOperasi == 1) {
+				bilangan1 = Random.Range (1, playerr.playerValue);
+				bilangan2 = playerr.playerValue - bilangan1;
+				displayText.text = bilangan1 + " + " + bilangan2;
+			} else if (inOperasi == 2) {
+				bilangan1 = Random.Range (playerr.playerValue + 1, 99);
+				bilangan2 = bilangan1 - playerr.playerValue;
+				displayText.text = bilangan1 + " - " + bilangan2;
+			} else if (inOperasi == 3) {
 				bilangan2 = Random.Range (1, 10);
-				bilangan1 = playerr.playervalue * bilangan2;
-				displaytext.text = bilangan1 + " / " + bilangan2;
-			} else if (inoperasi == 4) {
+				bilangan1 = playerr.playerValue * bilangan2;
+				displayText.text = bilangan1 + " / " + bilangan2;
+			} else if (inOperasi == 4) {
 				while (true) {
-					bilangan1 = Random.Range (1, playerr.playervalue + 1);
-					if (playerr.playervalue % bilangan1 == 0) {
-						bilangan2 = playerr.playervalue / bilangan1;
+					bilangan1 = Random.Range (1, playerr.playerValue + 1);
+					if (playerr.playerValue % bilangan1 == 0) {
+						bilangan2 = playerr.playerValue / bilangan1;
 						break;
 					}
 				}
-				displaytext.text = bilangan1 + " * " + bilangan2;
+				displayText.text = bilangan1 + " * " + bilangan2;
 			}
 		} 
 		else {
 			energyValue = -3;
-			inoperasi = Random.Range (1, 5);
+			inOperasi = Random.Range (1, 5);
 			bilangan1 = Random.Range(1,100);
-			bilangan2 = Random.Range(1, 100);
-			if (inoperasi == 1) {
-				if((bilangan1 + bilangan2) == playerr.playervalue){
+			bilangan2 = Random.Range(1,100);
+			if (inOperasi == 1) {
+				if((bilangan1 + bilangan2) == playerr.playerValue){
+					while(true){
+						bilangan1 = Random.Range(1,100);
+						bilangan2 = Random.Range(1,100);
+						if(bilangan1 + bilangan2 != playerr.playerValue) break;
+					}
+				}
+				displayText.text = bilangan1 + " + " + bilangan2;
+			} else if (inOperasi == 2) {
+				if((bilangan1 - bilangan2) == playerr.playerValue){
 					while(true){
 						bilangan1 = Random.Range(1,100);
 						bilangan2 = Random.Range(1, 100);
-						if(bilangan1 + bilangan2 != playerr.playervalue) break;
+						if(bilangan1 - bilangan2 != playerr.playerValue) break;
 					}
 				}
-				displaytext.text = bilangan1 + " + " + bilangan2;
-			} else if (inoperasi == 2) {
-				if((bilangan1 - bilangan2) == playerr.playervalue){
+				displayText.text = bilangan1 + " - " + bilangan2;
+			} else if (inOperasi == 3) {
+				if((bilangan1 / bilangan2) == playerr.playerValue){
 					while(true){
 						bilangan1 = Random.Range(1,100);
 						bilangan2 = Random.Range(1, 100);
-						if(bilangan1 - bilangan2 != playerr.playervalue) break;
+						if(bilangan1 / bilangan2 != playerr.playerValue) break;
 					}
 				}
-				displaytext.text = bilangan1 + " - " + bilangan2;
-			} else if (inoperasi == 3) {
-				if((bilangan1 / bilangan2) == playerr.playervalue){
+				displayText.text = bilangan1 + " / " + bilangan2;
+			} else if (inOperasi == 4) {
+				if((bilangan1 * bilangan2) == playerr.playerValue){
 					while(true){
 						bilangan1 = Random.Range(1,100);
 						bilangan2 = Random.Range(1, 100);
-						if(bilangan1 / bilangan2 != playerr.playervalue) break;
+						if(bilangan1 * bilangan2 != playerr.playerValue) break;
 					}
 				}
-				displaytext.text = bilangan1 + " / " + bilangan2;
-			} else if (inoperasi == 4) {
-				if((bilangan1 * bilangan2) == playerr.playervalue){
-					while(true){
-						bilangan1 = Random.Range(1,100);
-						bilangan2 = Random.Range(1, 100);
-						if(bilangan1 * bilangan2 != playerr.playervalue) break;
-					}
-				}
-				displaytext.text = bilangan1 + " * " + bilangan2;
+				displayText.text = bilangan1 + " * " + bilangan2;
 			}
 		}
 	}
