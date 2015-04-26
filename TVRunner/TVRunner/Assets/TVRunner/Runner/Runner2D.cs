@@ -50,6 +50,9 @@ public class Runner2D : MonoBehaviour {
 		if (col.gameObject.tag == "spike" || col.gameObject.tag == "box die") {
 			Die ();
 		}
+		if (col.gameObject.tag == "item") {
+			Destroy(col.gameObject);
+		}
 	}
 	
 	void OnCollisionEnter2D (Collision2D col) {
