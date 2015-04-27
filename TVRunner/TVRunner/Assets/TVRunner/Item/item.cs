@@ -40,18 +40,8 @@ public class item : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
-<<<<<<< HEAD
-		if(coll.gameObject.name == "Runner 2D")
-		{
-			Destroy(gameObject);
-			//Transform efek = Instantiate(itemParticle,transform.position,transform.rotation) as Transform;
-			//Destroy(efek.gameObject,1f);
-			playerr.AddEnergy(energyValue);
-			Debug.Log("Asdasd : " + energyValue);
-=======
 		if(coll.gameObject.name == "Runner 2D"){
 			playerr.AddEnergy(energyValue);
->>>>>>> 52900c819f19d8bfa42ee617380df34d91ec314d
 		}
 	}
 
