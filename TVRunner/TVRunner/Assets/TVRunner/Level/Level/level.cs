@@ -32,7 +32,7 @@ public class level : MonoBehaviour {
 			nilaiBenar = 10;
 			nilaiSalah = -3;
 			batasMax = 10;
-			batasMin = 1;
+			batasMin = 0;
 		}
 		else if (currentLevel == "Level 1") {
 			energyDrain = 1f;
@@ -41,7 +41,7 @@ public class level : MonoBehaviour {
 			nilaiBenar = 10;
 			nilaiSalah = -3;
 			batasMax = 10;
-			batasMin = 1;
+			batasMin = 0;
 		}
 		else if(currentLevel == "Level 2"){
 			energyDrain = 1f;
@@ -50,7 +50,7 @@ public class level : MonoBehaviour {
 			nilaiBenar = 10;
 			nilaiSalah = -3;
 			batasMax = 10;
-			batasMin = 1;
+			batasMin = 0;
 		}
 	}
 }

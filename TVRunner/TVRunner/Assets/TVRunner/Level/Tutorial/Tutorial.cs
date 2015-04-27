@@ -7,7 +7,7 @@ public class Tutorial : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		tutorialCount = 1;
-		InvokeRepeating("TutorialText", 1f, 3f);
+		InvokeRepeating("TutorialText", 1f, 2.8f);
 	}
 	
 	// Update is called once per frame
@@ -21,7 +21,7 @@ public class Tutorial : MonoBehaviour {
 			Invoke ("EmptyText", 2f);
 			tutorialCount++;
 		} else if (tutorialCount == 2) {
-			tutorialText.text = "Bawa sang character menuju portal untuk menyelesaikan satu level";
+			tutorialText.text = "Bawa sang character menuju portal\n untuk menyelesaikan satu level";
 			Invoke ("EmptyText", 2f);
 			tutorialCount++;
 		} else if (tutorialCount == 3) {
@@ -37,7 +37,7 @@ public class Tutorial : MonoBehaviour {
 			Invoke ("EmptyText", 2f);
 			tutorialCount++;
 		} else if (tutorialCount == 6) {
-			tutorialText.text = "Character harus menuju portal sebelum energy-nya habis";
+			tutorialText.text = "Character harus menuju portal\n sebelum energy-nya habis";
 			Invoke ("EmptyText", 2f);
 			tutorialCount++;
 		} else if (tutorialCount == 7) {
