@@ -51,7 +51,7 @@ public class item : MonoBehaviour {
 			energyValue = levelHandle.nilaiBenar;
 			inOperasi = Random.Range (1, levelHandle.batasOperasi);
 			if (inOperasi == 1) {
-				bilangan1 = Random.Range (0, playerr.playerValue+1);
+				bilangan1 = Random.Range (levelHandle.batasMin, playerr.playerValue+1);
 				bilangan2 = playerr.playerValue - bilangan1;
 				displayText.text = bilangan1 + " + " + bilangan2;
 			} else if (inOperasi == 2) {
@@ -76,13 +76,13 @@ public class item : MonoBehaviour {
 		else {
 			energyValue = levelHandle.nilaiSalah;
 			inOperasi = Random.Range (1, levelHandle.batasOperasi);
-			bilangan1 = Random.Range(1, levelHandle.batasMax);
-			bilangan2 = Random.Range(1, levelHandle.batasMax);
+			bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
+			bilangan2 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
 			if (inOperasi == 1) {
 				if((bilangan1 + bilangan2) == playerr.playerValue){
 					while(true){
-						bilangan1 = Random.Range(1, levelHandle.batasMax);
-						bilangan2 = Random.Range(1, levelHandle.batasMax);
+						bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
+						bilangan2 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
 						if(bilangan1 + bilangan2 != playerr.playerValue) break;
 					}
 				}
@@ -90,8 +90,8 @@ public class item : MonoBehaviour {
 			} else if (inOperasi == 2) {
 				if((bilangan1 - bilangan2) == playerr.playerValue){
 					while(true){
-						bilangan1 = Random.Range(1, levelHandle.batasMax);
-						bilangan2 = Random.Range(1, levelHandle.batasMax);
+						bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
+						bilangan2 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
 						if(bilangan1 - bilangan2 != playerr.playerValue) break;
 					}
 				}
@@ -99,8 +99,8 @@ public class item : MonoBehaviour {
 			} else if (inOperasi == 3) {
 				if((bilangan1 * bilangan2) == playerr.playerValue){
 					while(true){
-						bilangan1 = Random.Range(1, levelHandle.batasMax);
-						bilangan2 = Random.Range(1, levelHandle.batasMax);
+						bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
+						bilangan2 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
 						if(bilangan1 * bilangan2 != playerr.playerValue) break;
 					}
 				}
@@ -108,8 +108,8 @@ public class item : MonoBehaviour {
 			} else if (inOperasi == 4) {
 				if((bilangan1 / bilangan2) == playerr.playerValue){
 					while(true){
-						bilangan1 = Random.Range(1, levelHandle.batasMax);
-						bilangan2 = Random.Range(1, levelHandle.batasMax);
+						bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
+						bilangan2 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
 						if(bilangan1 / bilangan2 != playerr.playerValue) break;
 					}
 				}
