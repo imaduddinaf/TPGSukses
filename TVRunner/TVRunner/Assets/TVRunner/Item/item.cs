@@ -39,19 +39,10 @@ public class item : MonoBehaviour {
 		if(coll.gameObject.name == "Runner 2D")
 		{
 			Destroy(gameObject);
-			Transform efek = Instantiate(itemParticle,transform.position,transform.rotation) as Transform;
-			Destroy(efek.gameObject,1f);
+			//Transform efek = Instantiate(itemParticle,transform.position,transform.rotation) as Transform;
+			//Destroy(efek.gameObject,1f);
 			playerr.AddEnergy(energyValue);
 			Debug.Log("Asdasd : " + energyValue);
-		}
-	}
-	void OnCollisionEnter2D(Collision2D coll){
-		if(coll.gameObject.name == "Runner 2D")
-		{
-			Destroy(gameObject);
-			Transform efek = Instantiate(itemParticle,transform.position,transform.rotation) as Transform;
-			Destroy(efek.gameObject,1f);
-			playerr.AddEnergy(energyValue);
 		}
 	}
 

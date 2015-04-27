@@ -8,6 +8,8 @@ public class Runner2D : MonoBehaviour {
 
 	private bool touchingPlatform;
 	private float tmpX;
+
+	private Vector3 vel;
 	//behaviour
 	void Die() {
 		Debug.Log("Trigger Die");
@@ -18,7 +20,10 @@ public class Runner2D : MonoBehaviour {
 
 	void Jump() {
 		Debug.Log("jumped");
-		GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight));
+		//GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight));
+		GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight), ForceMode2D.Force);
+		//GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight * Time.deltaTime * 4.0f), ForceMode2D.Impulse);
+		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, jumpHeight);
 	}
 
 	void NextLevel() {
@@ -33,16 +38,22 @@ public class Runner2D : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {		
 		//resume
+		Debug.Log (Time.deltaTime);
 		if(Input.GetButtonDown("Submit")){
 			Time.timeScale = 1.0f;
 		}
+		if (touchingPlatform && (Input.GetKeyDown("space")/*GetButtonDown ("Jump") || Input.touchCount > 0*/)) {
+			Jump();
+		}
 		//move runner
 		transform.Translate(velocity * Time.deltaTime, 0f, 0f);
+
+		//GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0f);
 	}
 
 	void FixedUpdate(){
-		if (touchingPlatform && (Input.GetKeyDown("space")/*GetButtonDown ("Jump")*/ || Input.touchCount > 0)) {
-			Jump();
+		if (touchingPlatform && Input.touchCount > 0) {
+			Jump ();
 		}
 	}
 
