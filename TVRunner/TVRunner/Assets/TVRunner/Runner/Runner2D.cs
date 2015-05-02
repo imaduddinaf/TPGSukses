@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Runner2D : MonoBehaviour {
-
+	private IngameMenu menu;
 	public float velocity;
 	public float jumpHeight;
 
@@ -13,9 +13,10 @@ public class Runner2D : MonoBehaviour {
 	//behaviour
 	void Die() {
 		Debug.Log("Trigger Die");
+		menu.GameOver ();
 		//Time.timeScale = 0;
-		MasterData.currentLevel = 0;
-		Application.LoadLevel ("Main Menu");
+		//MasterData.currentLevel = 0;
+		//Application.LoadLevel ("World Map");
 	}
 
 	void Jump() {
@@ -26,28 +27,31 @@ public class Runner2D : MonoBehaviour {
 		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, jumpHeight);
 	}
 
-	void NextLevel() {
-		MasterData.currentLevel += 1;
-		Application.LoadLevel(Application.loadedLevel+1);
+	void Win() {
+		Debug.Log ("Wiin");
+		menu.Congrats ();
 	}
 
 	// Use this for initialization
 	void Start () {
+		GameObject menuObj = GameObject.Find ("Menu");
+		menu = menuObj.GetComponent <IngameMenu>();
+		Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {		
 		//resume
-		Debug.Log (Time.deltaTime);
-		if(Input.GetButtonDown("Submit")){
+		//Debug.Log (Time.deltaTime);
+		/*if(Input.GetButtonDown("Submit")){
 			Time.timeScale = 1.0f;
-		}
+		}*/
 		if (touchingPlatform && (Input.GetKeyDown("space")/*GetButtonDown ("Jump") || Input.touchCount > 0*/)) {
 			Jump();
 		}
 		//move runner
 		transform.Translate(velocity * Time.deltaTime, 0f, 0f);
-
+		//Debug.Log (Application.loadedLevel + 1);
 		//GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0f);
 	}
 
@@ -69,7 +73,7 @@ public class Runner2D : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "portal") {
 			Debug.Log("Next Level");
-			NextLevel();
+			Win();
 		}
 		touchingPlatform = true;
 	}

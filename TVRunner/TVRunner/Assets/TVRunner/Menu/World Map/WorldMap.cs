@@ -12,6 +12,12 @@ public class WorldMap : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			//Time.timeScale = 0;
+			//Application.Quit();
+			//Pause();
+			BackToMainMenuButton();
+		}
 		//Debug.Log (MasterData.GameVersion);
 	}
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Screen : MonoBehaviour {
+public class ScreenS : MonoBehaviour {
 	
 	public float velocity;
 	// Use this for initialization

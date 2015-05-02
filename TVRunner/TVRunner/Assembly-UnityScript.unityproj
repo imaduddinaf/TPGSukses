@@ -46,16 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\JSON Tests\UnityScript\Test_UnityScript.js" />
-     <Compile Include="Assets\UnitySerializer\Scripts\JSONPauseMenu.js" />
-     <Compile Include="Assets\UnitySerializer\Scripts\Movement.js" />
-     <Compile Include="Assets\UnitySerializer\Scripts\PauseMenu.js" />
-     <Compile Include="Assets\UnitySerializer\Scripts\Spawner.js" />
-     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
-     <None Include="Assets\plugins\whydoidoit.com\license.txt" />
-     <None Include="Assets\tesdata.txt" />
-     <None Include="Assets\JSON Tests\TroubleShoot.txt" />
-     <None Include="Assets\UnitySerializer\readme.txt" />
+     <Compile Include="Assets\TVRunner\Menu\GUIrescaler.js" />
+     <Compile Include="Assets\TVRunner\Menu\PauseMenu.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -66,8 +58,6 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{BD55C2EE-84D1-CB92-1B3B-05019C9A02AC}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{19E8FD72-30B0-A58A-FBDA-1DEBD4A2AF46}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
