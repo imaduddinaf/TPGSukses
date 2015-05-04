@@ -21,7 +21,7 @@ public class player : MonoBehaviour {
 			Debug.Log ("Cannot find 'level' script");
 		}
 
-		energy = 20;
+		energy = 12;
 		maxEnergy = energy;
 		/*if (Application.loadedLevelName == "Tutorial") 
 			InvokeRepeating("DecreaseBattery", 18f, 1f);
@@ -56,5 +56,7 @@ public class player : MonoBehaviour {
 			InvokeRepeating("DecreaseBattery", 1f, 1f);
 		playerValue = Random.Range (1, levelHandle.batasPlayer);
 		Test.text = "" + playerValue;
+		energy += levelHandle.bonusEnergy;
+		maxEnergy = energy;
 	}
 }

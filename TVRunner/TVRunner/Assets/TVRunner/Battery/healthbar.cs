@@ -30,7 +30,7 @@ public class healthbar : MonoBehaviour {
 		minXvalue = healthTransform.position.x - healthTransform.rect.width * canvasHealth.scaleFactor;
 		//print (healthTransform.rect.width);
 		//print (minXvalue);
-		Invoke ("GetHealth", 0f);
+		Invoke ("GetHealth", 0.01f);
 	}
 	
 	// Update is called once per frame
@@ -54,8 +54,8 @@ public class healthbar : MonoBehaviour {
 
 	void GetHealth(){
 		maxHealth = playerr.energy;
-		//Debug.Log ("maxhealth" +maxHealth);
+		Debug.Log ("maxhealth" +maxHealth);
 		currentHealth = maxHealth;
-		//Debug.Log ("currenthealt" +currentHealth);
+		Debug.Log ("currenthealt" +currentHealth);
 	}
 }

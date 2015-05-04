@@ -1,22 +1,10 @@
 ﻿<Properties>
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Menu\Main Menu\MainMenu.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Item\item.cs">
     <Files>
-      <File FileName="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" Line="44" Column="38" />
-      <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="53" Column="17" />
-      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="1" Column="1" />
-      <File FileName="Assets\TVRunner\Menu\World Map\WorldMap.cs" Line="1" Column="1" />
       <File FileName="Assets\TVRunner\Runner\player.cs" Line="1" Column="1" />
-      <File FileName="Assets\TVRunner\Menu\Main Menu\MasterData.cs" Line="1" Column="1" />
-      <File FileName="Assets\TVRunner\Menu\Credits\Credits.cs" Line="20" Column="2" />
-      <File FileName="Assets\TVRunner\Menu\Options\Options.cs" Line="23" Column="3" />
-=======
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\player.cs">
-    <Files>
-      <File FileName="Assets\TVRunner\Runner\player.cs" Line="61" Column="1" />
->>>>>>> b4302debb9cb3d8b5248e91546f0c2cf524cb60a
+      <File FileName="Assets\TVRunner\Level\Level\level.cs" Line="55" Column="20" />
+      <File FileName="Assets\TVRunner\Item\item.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

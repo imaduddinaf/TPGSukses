@@ -58,7 +58,7 @@ public class item : MonoBehaviour {
 				bilangan1 = Random.Range (playerr.playerValue, levelHandle.batasMax);
 				bilangan2 = bilangan1 - playerr.playerValue;
 				displayText.text = bilangan1 + " - " + bilangan2;
-			} else if (inOperasi == 3) {
+			} /*else if (inOperasi == 3) {
 				while (true) {
 					bilangan1 = Random.Range (1, playerr.playerValue + 1);
 					if (playerr.playerValue % bilangan1 == 0) {
@@ -71,7 +71,7 @@ public class item : MonoBehaviour {
 				bilangan2 = Random.Range (1, levelHandle.batasMin);
 				bilangan1 = playerr.playerValue * bilangan2;
 				displayText.text = bilangan1 + " / " + bilangan2;
-			} 
+			} */
 		} 
 		else {
 			energyValue = levelHandle.nilaiSalah;
@@ -96,7 +96,7 @@ public class item : MonoBehaviour {
 					}
 				}
 				displayText.text = bilangan1 + " - " + bilangan2;
-			} else if (inOperasi == 3) {
+			} /*else if (inOperasi == 3) {
 				if((bilangan1 * bilangan2) == playerr.playerValue){
 					while(true){
 						bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
@@ -114,7 +114,7 @@ public class item : MonoBehaviour {
 					}
 				}
 				displayText.text = bilangan1 + " / " + bilangan2;
-			}
+			}*/
 		}
 	}
 }
