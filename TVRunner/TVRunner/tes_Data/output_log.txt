@@ -16,11 +16,10 @@ Platform assembly: C:\Users\imaduddinalfikri\SkyDrive\Documents\Pengembangan Gam
 Loading C:\Users\imaduddinalfikri\SkyDrive\Documents\Pengembangan Game\TPGSukses\TVRunner\TVRunner\tes_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\imaduddinalfikri\SkyDrive\Documents\Pengembangan Game\TPGSukses\TVRunner\TVRunner\tes_Data\Managed\ICSharpCode.SharpZipLib.dll (this message is harmless)
 Loading C:\Users\imaduddinalfikri\SkyDrive\Documents\Pengembangan Game\TPGSukses\TVRunner\TVRunner\tes_Data\Managed\ICSharpCode.SharpZipLib.dll into Unity Child Domain
-- Completed reload, in  0.072 seconds
+- Completed reload, in  0.146 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
 Platform assembly: C:\Users\imaduddinalfikri\SkyDrive\Documents\Pengembangan Game\TPGSukses\TVRunner\TVRunner\tes_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\imaduddinalfikri\SkyDrive\Documents\Pengembangan Game\TPGSukses\TVRunner\TVRunner\tes_Data\Managed\System.dll (this message is harmless)
-Waiting for finish
