@@ -51,6 +51,8 @@
      <Compile Include="Assets\TVRunner\Item\item.cs" />
      <Compile Include="Assets\TVRunner\Level\Level\level.cs" />
      <Compile Include="Assets\TVRunner\Level\Tutorial\Tutorial.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Credits\Credits.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Options\Options.cs" />
      <Compile Include="Assets\TVRunner\Platform\Menu\Ingame\IngameMenu.cs" />
      <Compile Include="Assets\TVRunner\Platform\Menu\Main Menu\Backup.cs" />
      <Compile Include="Assets\TVRunner\Platform\Menu\Main Menu\MainMenu.cs" />
