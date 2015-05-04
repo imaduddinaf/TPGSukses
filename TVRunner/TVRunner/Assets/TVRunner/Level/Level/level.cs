@@ -9,7 +9,7 @@ public class level : MonoBehaviour {
 	public int nilaiSalah;
 	public int batasMax;
 	public int batasMin;
-	public float energyDrain;
+	public int energyDrain;
 	private string currentLevel;
 
 	// Use this for initialization
@@ -26,7 +26,7 @@ public class level : MonoBehaviour {
 
 	void LevelHandler(){
 		if (currentLevel == "Tutorial") {
-			energyDrain = 1f;
+			energyDrain = 1;
 			batasPlayer = 4;
 			batasOperasi = 5;
 			nilaiBenar = 10;
@@ -35,7 +35,7 @@ public class level : MonoBehaviour {
 			batasMin = 0;
 		}
 		else if (currentLevel == "Level 1") {
-			energyDrain = 1f;
+			energyDrain = 1;
 			batasPlayer = 4;
 			batasOperasi = 2;
 			nilaiBenar = 10;
@@ -44,7 +44,7 @@ public class level : MonoBehaviour {
 			batasMin = 0;
 		}
 		else if(currentLevel == "Level 2"){
-			energyDrain = 1f;
+			energyDrain = 1;
 			batasPlayer = 4;
 			batasOperasi = 2;
 			nilaiBenar = 10;

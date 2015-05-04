@@ -46,14 +46,14 @@ public class player : MonoBehaviour {
 	}
 	
 	void DecreaseBattery(){
-		energy--;
+		energy -= levelHandle.energyDrain;
 	}
 
 	void GetValue(){
 		if (Application.loadedLevelName == "Tutorial") 
 			InvokeRepeating("DecreaseBattery", 18f, 1f);
 		else 
-			InvokeRepeating("DecreaseBattery", 1f, levelHandle.energyDrain);
+			InvokeRepeating("DecreaseBattery", 1f, 1f);
 		playerValue = Random.Range (1, levelHandle.batasPlayer);
 		Test.text = "" + playerValue;
 	}
