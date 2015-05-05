@@ -37,4 +37,12 @@ public class WorldMap : MonoBehaviour {
 		MasterData.currentLevel = 2;
 		Application.LoadLevel ("Level 2");
 	}
+	public void Level3(){
+		MasterData.currentLevel = 3;
+		Application.LoadLevel ("Level 3");
+	}
+	public void level4(){
+		MasterData.currentLevel = 4;
+		Application.LoadLevel ("Level 4");
+	}
 }

@@ -69,11 +69,11 @@ public class level : MonoBehaviour {
 		else if(currentLevel == "Level 4"){
 			bonusEnergy = 0;
 			energyDrain = 1;
-			batasPlayer = 4;
+			batasPlayer = 6;
 			batasOperasi = 2;
-			nilaiBenar = 10;
-			nilaiSalah = -3;
-			batasMax = 10;
+			nilaiBenar = 8;
+			nilaiSalah = -4;
+			batasMax = 15;
 			batasMin = 0;
 		}
 		else if (currentLevel == "Level 5") {
