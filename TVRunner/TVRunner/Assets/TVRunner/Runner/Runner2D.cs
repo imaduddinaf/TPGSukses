@@ -10,9 +10,16 @@ public class Runner2D : MonoBehaviour {
 	private float tmpX;
 
 	private Vector3 vel;
+	private Animator animator;
+	private bool triggered;
+	private bool jump;
+	private float triggeredTime;
+	private float curHeight;
+	private float prevHeight;
+	private bool fall;
 	//behaviour
 	void Die() {
-		Debug.Log("Trigger Die");
+		//Debug.Log("Trigger Die");
 		menu.GameOver ();
 		//Time.timeScale = 0;
 		//MasterData.currentLevel = 0;
@@ -20,7 +27,8 @@ public class Runner2D : MonoBehaviour {
 	}
 
 	void Jump() {
-		Debug.Log("jumped");
+		//Debug.Log("jumped");
+		jump = true;
 		//GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight));
 		GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight), ForceMode2D.Force);
 		//GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, jumpHeight * Time.deltaTime * 4.0f), ForceMode2D.Impulse);
@@ -28,7 +36,7 @@ public class Runner2D : MonoBehaviour {
 	}
 
 	void Win() {
-		Debug.Log ("Wiin");
+		//Debug.Log ("Wiin");
 		menu.Congrats ();
 	}
 
@@ -37,10 +45,25 @@ public class Runner2D : MonoBehaviour {
 		GameObject menuObj = GameObject.Find ("Menu");
 		menu = menuObj.GetComponent <IngameMenu>();
 		Time.timeScale = 1;
+		animator = this.GetComponent<Animator> ();
+		animator.SetInteger("State", 0);
+		triggered = false;
+		triggeredTime = 0;
+		jump = false;
+		curHeight = prevHeight = 0.0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {		
+		curHeight = transform.position.y;
+		float travel = curHeight - prevHeight;
+		if (travel < 0) {
+			//Debug.Log("fall +");
+			fall = true;
+		} else if (travel > 0) {
+			//Debug.Log("fall -");
+			fall = false;
+		}
 		//resume
 		//Debug.Log (Time.deltaTime);
 		/*if(Input.GetButtonDown("Submit")){
@@ -49,10 +72,31 @@ public class Runner2D : MonoBehaviour {
 		if (touchingPlatform && (Input.GetKeyDown("space")/*GetButtonDown ("Jump") || Input.touchCount > 0*/)) {
 			Jump();
 		}
+		if (touchingPlatform && !triggered && !fall) {
+			animator.SetInteger("State", 0);
+		}
+		if (!touchingPlatform && !triggered) {
+			if (jump) {
+				animator.SetInteger ("State", 1);
+			}
+			if (fall) {
+				//Debug.Log("fall");
+				animator.SetInteger ("State", 3);
+			}
+		}
+		if (triggered) {
+			triggeredTime += Time.deltaTime;
+			if (triggeredTime > 0.4) {
+				triggered = false;
+				triggeredTime = 0;
+			}
+			animator.SetInteger ("State", 2);
+		}
 		//move runner
 		transform.Translate(velocity * Time.deltaTime, 0f, 0f);
 		//Debug.Log (Application.loadedLevel + 1);
 		//GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0f);
+		prevHeight = curHeight;
 	}
 
 	void FixedUpdate(){
@@ -62,6 +106,7 @@ public class Runner2D : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
+		triggered = true;
 		if (col.gameObject.tag == "spike" || col.gameObject.tag == "box die") {
 			Die ();
 		}
@@ -69,12 +114,14 @@ public class Runner2D : MonoBehaviour {
 			Destroy(col.gameObject);
 		}
 	}
-	
+
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "portal") {
 			Debug.Log("Next Level");
 			Win();
 		}
+		jump = false;
+		fall = false;
 		touchingPlatform = true;
 	}
 	

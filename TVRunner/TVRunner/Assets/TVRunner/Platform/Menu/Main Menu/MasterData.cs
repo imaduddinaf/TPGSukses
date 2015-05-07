@@ -50,10 +50,12 @@ public class MasterData : MonoBehaviour {
 		} else {
 			LoadFromFile ();
 		}
+		levelMax = 4;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		//Debug.Log (levelMax);
 		version.text = gameVersion;
 		//Debug.Log (volume.ToString ());
 		/*if(Input.GetKeyDown("space")){

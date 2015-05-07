@@ -37,7 +37,7 @@ public class IngameMenu : MonoBehaviour {
 
 	public void NextLevel() {
 		MasterData.currentLevel += 1;
-		//Debug.Log (MasterData.currentLevel + ".." + MasterData.levelMax);
+		Debug.Log (MasterData.currentLevel + ".." + MasterData.levelMax);
 		if (MasterData.currentLevel > MasterData.levelMax) {
 			Application.LoadLevel ("World Map");
 		} else {
