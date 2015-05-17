@@ -6,7 +6,9 @@ public class item : MonoBehaviour {
 	// Use this for initialization
 	public bool type;
 	private int energyValue;
+	private float scoreItem;
 	private player playerr;
+	private Runner2D runnerObj;
 	private level levelHandle;
 	public TextMesh displayText;
 	private int inOperasi;
@@ -30,6 +32,7 @@ public class item : MonoBehaviour {
 		if (playerr == null){
 			Debug.Log ("Cannot find 'player' script");
 		}
+		runnerObj = playerrObject.GetComponent <Runner2D> ();
 		Invoke("GetOperasi",0.01f);
 	}
 
@@ -42,12 +45,14 @@ public class item : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll){
 		if(coll.gameObject.name == "Runner 2D"){
 			playerr.AddEnergy(energyValue);
+			runnerObj.AddScore(scoreItem);
 		}
 	}
 
 
 	void GetOperasi(){
 		if (type == true) {
+			scoreItem = 1000;
 			energyValue = levelHandle.nilaiBenar;
 			inOperasi = Random.Range (1, levelHandle.batasOperasi);
 			if (inOperasi == 1) {
@@ -74,6 +79,7 @@ public class item : MonoBehaviour {
 			} */
 		} 
 		else {
+			scoreItem = -750;
 			energyValue = levelHandle.nilaiSalah;
 			inOperasi = Random.Range (1, levelHandle.batasOperasi);
 			bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);

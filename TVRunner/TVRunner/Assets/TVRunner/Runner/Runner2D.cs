@@ -4,8 +4,9 @@ using System.Collections;
 public class Runner2D : MonoBehaviour {
 	private IngameMenu menu;
 	public float velocity;
+	public float tmpVelocity;
 	public float jumpHeight;
-
+	private level levelHandle;
 	private bool touchingPlatform;
 	private float tmpX;
 
@@ -17,6 +18,9 @@ public class Runner2D : MonoBehaviour {
 	private float curHeight;
 	private float prevHeight;
 	private bool fall;
+	private float score;
+	private float tmpScore;
+	public GUIText textScore;
 	//behaviour
 	void Die() {
 		//Debug.Log("Trigger Die");
@@ -51,6 +55,11 @@ public class Runner2D : MonoBehaviour {
 		triggeredTime = 0;
 		jump = false;
 		curHeight = prevHeight = 0.0f;
+		score = tmpScore = 0;
+		textScore.text = "0000";
+		tmpVelocity = velocity;
+		GameObject levelObject = GameObject.Find ("Level Handle");
+		levelHandle = levelObject.GetComponent <level>();
 	}
 	
 	// Update is called once per frame
@@ -97,6 +106,10 @@ public class Runner2D : MonoBehaviour {
 		//Debug.Log (Application.loadedLevel + 1);
 		//GetComponent<Rigidbody2D>().velocity = new Vector2(velocity, 0f);
 		prevHeight = curHeight;
+		if (score != tmpScore) {
+			if(score<1000 && score>0) textScore.text = "0" +score;
+			else textScore.text = "" +score;
+		}
 	}
 
 	void FixedUpdate(){
@@ -113,16 +126,37 @@ public class Runner2D : MonoBehaviour {
 		if (col.gameObject.tag == "item") {
 			Destroy(col.gameObject);
 		}
+		if(col.gameObject.name == "batas"){
+			tmpVelocity = 0;
+			triggered=false;
+		}
 	}
+
 
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "portal") {
+			GetFinalScore();
 			Debug.Log("Next Level");
 			Win();
 		}
 		jump = false;
 		fall = false;
 		touchingPlatform = true;
+	}
+
+	void GetFinalScore(){
+		float FinalScore;
+		FinalScore = score / levelHandle.scoreMax;
+		if(FinalScore < 0.34)
+			Debug.Log("Bintang 1");
+		else if (FinalScore < 0.76) 
+			Debug.Log("Bintang 2");
+		else if (FinalScore <= 1) 
+			Debug.Log("Bintang 3");
+	}
+
+	public void AddScore (float scoreValue){
+		score += scoreValue;
 	}
 	
 	void OnCollisionExit2D () {
