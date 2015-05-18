@@ -39,7 +39,7 @@ public class level : MonoBehaviour {
 			batasMax = 10;
 			batasMin = 0;
 			jumlahBenar = 1;
-			jumlahSalah = 0;
+			jumlahSalah = 1;
 			scoreMax = 1000;
 		}
 		else if (currentLevel == "Level 1") {

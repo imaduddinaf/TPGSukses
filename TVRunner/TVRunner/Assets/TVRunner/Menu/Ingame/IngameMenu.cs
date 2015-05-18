@@ -83,7 +83,7 @@ public class IngameMenu : MonoBehaviour {
 	}
 
 	void OnGUI(){
-<<<<<<< HEAD:TVRunner/TVRunner/Assets/TVRunner/Platform/Menu/Ingame/IngameMenu.cs
+
 		float screenWidth = Screen.width;
 		float screenHeight = Screen.height;
 		float distanceBetweenMenus = menuHeight * 0.05f;
@@ -91,11 +91,10 @@ public class IngameMenu : MonoBehaviour {
 		GUI.skin.box.wordWrap=false;
 		GUI.skin.button.fontSize=50;
 		GUI.skin.button.wordWrap=false;
-=======
 		screenWidth = Screen.width;
 		screenHeight = Screen.height;
 		distanceBetweenMenus = menuHeight * 0.05f;
->>>>>>> d660823a8331719e72741f87400818a1f1505dac:TVRunner/TVRunner/Assets/TVRunner/Menu/Ingame/IngameMenu.cs
+
 		//menu pause
 		if (pauseEnabled) {
 			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "menu box");
