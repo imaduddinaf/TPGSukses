@@ -47,6 +47,16 @@ public class item : MonoBehaviour {
 		if(coll.gameObject.name == "Runner 2D"){
 			playerr.AddEnergy(energyValue);
 			runnerObj.AddScore(scoreItem);
+			if(type){
+				runnerObj.triggered=false;
+				runnerObj.trueTriggered=true;
+				runnerObj.falseTriggered=false;
+			}
+			if(!type){
+				runnerObj.triggered=false;
+				runnerObj.falseTriggered=true;
+				runnerObj.trueTriggered=false;
+			}
 		}
 	}
 

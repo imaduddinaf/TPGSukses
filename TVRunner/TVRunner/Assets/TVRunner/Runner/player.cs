@@ -35,7 +35,7 @@ public class player : MonoBehaviour {
 	}
 
 	void Update () {
-		if (energy == 0){
+		if (energy <= 0){
 			Die ();
 			//currentLevel = Application.loadedLevelName;
 			//Application.LoadLevel(currentLevel);
