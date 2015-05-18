@@ -43,18 +43,23 @@ public class MainMenu : MonoBehaviour {
 	public void OnClickOptions(){
 		Application.LoadLevel ("Options");	
 	}
+
+	public void OnClickMuteUnmute(){
+
+	}
+
 	void OnGUI(){
 		float screenWidth = Screen.width;
 		float screenHeight = Screen.height;
 		float distanceBetweenMenus = menuHeight * 0.05f;
 		//menu pause
 		if (quit) {
-			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "");
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), "Cancel")) {
+			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.5f * 0.25f), menuWidth, menuHeight * 0.5f), "Are you sure?");
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.3f * 1.5f), (screenHeight * 0.5f), menuWidth * 0.3f, menuHeight * 0.2f), "Cancel")) {
 				Debug.Log ("Cancel Quit");
 				quit = false;
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), "Quit")) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) + (menuWidth * 0.3f * 0.5f), (screenHeight * 0.5f), menuWidth * 0.3f, menuHeight * 0.2f), "Quit")) {
 				Debug.Log ("Quit");
 				Quit ();
 			}
