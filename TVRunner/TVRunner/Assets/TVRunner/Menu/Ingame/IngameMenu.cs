@@ -11,6 +11,12 @@ public class IngameMenu : MonoBehaviour {
 	float screenWidth;
 	float screenHeight;
 	float distanceBetweenMenus;
+	public Texture2D ingameMenuBg;
+	public Texture2D resume;
+	public Texture2D restart;
+	public Texture2D quit;
+	public Texture2D nextLevel;
+	public Texture2D star;
 	//behaviour
 
 	public void Pause(){
@@ -54,8 +60,8 @@ public class IngameMenu : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		menuWidth = Screen.width * 0.5f;
-		menuHeight = Screen.height * 0.7f;
+		menuWidth = Screen.width * 0.7f;
+		menuHeight = Screen.height * 0.9f;
 		pauseEnabled = false;
 		gameOver = false;
 		congrats = false;
@@ -88,16 +94,23 @@ public class IngameMenu : MonoBehaviour {
 		distanceBetweenMenus = menuHeight * 0.05f;
 		//menu pause
 		if (pauseEnabled) {
-			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "menu box");
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), "Resume")) {
+			
+			GUIStyle restartStyle = new GUIStyle();
+			//restartStyle.active.background = restart;
+			restartStyle.active.textColor = Color.red;
+
+			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), "pause");
+			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
+
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.45f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), resume)) {
 				Debug.Log ("Resume");
 				Resume();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), "Restart")) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.45f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), restart)) {
 				Debug.Log ("Restart");
 				Restart();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + ((distanceBetweenMenus * 2) + (menuHeight * 0.2f * 2)), menuWidth * 0.8f, menuHeight * 0.2f), "Quit")) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.45f) + (menuHeight * 0.15f) + ((distanceBetweenMenus * 2) + (menuHeight * 0.2f * 2)), menuWidth * 0.8f, menuHeight * 0.2f), quit)) {
 				Debug.Log ("Quit");
 				Quit ();
 			}
@@ -105,27 +118,29 @@ public class IngameMenu : MonoBehaviour {
 		//menu gameover
 		if (gameOver) {
 			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "game over");
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), "Restart")) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), restart)) {
 				Debug.Log ("Restart");
 				Restart();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), "Quit")) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), quit)) {
 				Debug.Log ("Quit");
 				Quit ();
 			}
 		}
 		//menu win-congrats
 		if (congrats) {
-			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "congratulations!!");
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), "Restart")) {
+			//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "congratulations!!");
+			GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
+
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.25f) + (distanceBetweenMenus + (menuHeight * 0.3f)), menuWidth * 0.15f, menuHeight * 0.15f), restart)) {
 				Debug.Log ("Restart");
 				Restart();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), "Next Level")) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.075f ), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.25f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.2f, menuHeight * 0.2f), nextLevel)) {
 				Debug.Log ("Next Level");
 				NextLevel();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + ((distanceBetweenMenus * 2) + (menuHeight * 0.2f * 2)), menuWidth * 0.8f, menuHeight * 0.2f), "Quit")) {
+			if (GUI.Button (new Rect ((screenWidth * 0.65f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.25f) + (distanceBetweenMenus + (menuHeight * 0.3f)), menuWidth * 0.15f, menuHeight * 0.15f), quit)) {
 				Debug.Log ("Quit");
 				Quit ();
 			}

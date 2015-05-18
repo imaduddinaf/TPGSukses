@@ -81,6 +81,12 @@ public class Runner2D : MonoBehaviour {
 		if (touchingPlatform && (Input.GetKeyDown("space")/*GetButtonDown ("Jump") || Input.touchCount > 0*/)) {
 			Jump();
 		}
+		//state 
+		//0 - run
+		//1 - jump
+		//2 - wrong
+		//3 - fall
+		//4 - true
 		if (touchingPlatform && !triggered && !fall) {
 			animator.SetInteger("State", 0);
 		}
