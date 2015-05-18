@@ -83,6 +83,10 @@ public class IngameMenu : MonoBehaviour {
 		float screenWidth = Screen.width;
 		float screenHeight = Screen.height;
 		float distanceBetweenMenus = menuHeight * 0.05f;
+		GUI.skin.box.fontSize=50;
+		GUI.skin.box.wordWrap=false;
+		GUI.skin.button.fontSize=50;
+		GUI.skin.button.wordWrap=false;
 		//menu pause
 		if (pauseEnabled) {
 			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "menu box");

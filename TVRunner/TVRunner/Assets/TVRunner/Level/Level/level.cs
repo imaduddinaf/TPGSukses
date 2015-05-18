@@ -12,6 +12,8 @@ public class level : MonoBehaviour {
 	public int energyDrain;
 	public int bonusEnergy;
 	public int scoreMax;
+	public int jumlahBenar;
+	public int jumlahSalah;
 	private string currentLevel;
 
 	// Use this for initialization
@@ -36,6 +38,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 1;
+			jumlahSalah = 0;
 			scoreMax = 1000;
 		}
 		else if (currentLevel == "Level 1") {
@@ -47,6 +51,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 2;
+			jumlahSalah = 2;
 			scoreMax = 2000;
 		}
 		else if(currentLevel == "Level 2"){
@@ -58,6 +64,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 2;
+			jumlahSalah = 2;
 			scoreMax = 2000;
 		}
 		else if (currentLevel == "Level 3") {
@@ -69,6 +77,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -4;
 			batasMax = 15;
 			batasMin = 0;
+			jumlahBenar = 2;
+			jumlahSalah = 2;
 			scoreMax = 2000;
 		}
 		else if(currentLevel == "Level 4"){
@@ -80,6 +90,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -4;
 			batasMax = 15;
 			batasMin = 0;
+			jumlahBenar = 3;
+			jumlahSalah = 3;
 			scoreMax = 3000;
 		}
 		else if (currentLevel == "Level 5") {
@@ -91,6 +103,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 2;
+			jumlahSalah = 3;
 			scoreMax = 2000;
 		}
 		else if(currentLevel == "Level 6"){
@@ -102,6 +116,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 2;
+			jumlahSalah = 2;
 			scoreMax = 2000;
 		}
 		else if (currentLevel == "Level 7") {
@@ -113,6 +129,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 3;
+			jumlahSalah = 2;
 			scoreMax = 3000;
 		}
 		else if(currentLevel == "Level 8"){
@@ -124,6 +142,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 3;
+			jumlahSalah = 3;
 			scoreMax = 3000;
 		}
 		else if (currentLevel == "Level 9") {
@@ -135,6 +155,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 3;
+			jumlahSalah = 4;
 			scoreMax = 3000;
 		}
 		else if(currentLevel == "Level 10"){
@@ -146,6 +168,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 3;
+			jumlahSalah = 3;
 			scoreMax = 3000;
 		}
 		else if (currentLevel == "Level 11") {
@@ -157,6 +181,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 4;
+			jumlahSalah = 3;
 			scoreMax = 4000;
 		}
 		else if(currentLevel == "Level 12"){
@@ -168,6 +194,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 4;
+			jumlahSalah = 4;
 			scoreMax = 4000;
 		}
 		else if(currentLevel == "Level 13"){
@@ -179,6 +207,8 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			jumlahBenar = 4;
+			jumlahSalah = 5;
 			scoreMax = 4000;
 		}
 	}
