@@ -89,9 +89,18 @@ public class IngameMenu : MonoBehaviour {
 	}
 
 	void OnGUI(){
+
+		float screenWidth = Screen.width;
+		float screenHeight = Screen.height;
+		float distanceBetweenMenus = menuHeight * 0.05f;
+		GUI.skin.box.fontSize=50;
+		GUI.skin.box.wordWrap=false;
+		GUI.skin.button.fontSize=50;
+		GUI.skin.button.wordWrap=false;
 		screenWidth = Screen.width;
 		screenHeight = Screen.height;
 		distanceBetweenMenus = menuHeight * 0.05f;
+
 		//menu pause
 		if (pauseEnabled) {
 			

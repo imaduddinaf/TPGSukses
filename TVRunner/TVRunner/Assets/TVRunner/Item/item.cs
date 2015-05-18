@@ -4,7 +4,7 @@ using System.Collections;
 public class item : MonoBehaviour {
 
 	// Use this for initialization
-	public bool type;
+	private bool type;
 	private int energyValue;
 	private float scoreItem;
 	private player playerr;
@@ -14,6 +14,7 @@ public class item : MonoBehaviour {
 	private int inOperasi;
 	public int bilangan1;
 	public int bilangan2;
+	private int rnd;
 
 
 	void Start () {
@@ -51,6 +52,24 @@ public class item : MonoBehaviour {
 
 
 	void GetOperasi(){
+		rnd = Random.Range (0, 2);
+		if (rnd == 0) {
+			if (levelHandle.jumlahBenar == 0) {
+				type = false;
+				levelHandle.jumlahSalah--;
+			} else {
+				type = true;
+				levelHandle.jumlahBenar--;
+			}
+		} else if (rnd == 1) {
+			if (levelHandle.jumlahSalah == 0) {
+				type = true;
+				levelHandle.jumlahBenar--;
+			} else {
+				type = false;
+				levelHandle.jumlahSalah--;
+			}
+		}
 		if (type == true) {
 			scoreItem = 1000;
 			energyValue = levelHandle.nilaiBenar;

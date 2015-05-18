@@ -41,11 +41,11 @@ public class Tutorial : MonoBehaviour {
 			Invoke ("EmptyText", 2f);
 			tutorialCount++;
 		} else if (tutorialCount == 7) {
-			tutorialText.text = "Untuk mengisi energy,\n Ambil battery dengan hasil operasi yang sesuai dengan kode Character";
+			tutorialText.text = "Untuk mengisi energy, Ambil battery dengan hasil operasi\n yang sesuai dengan kode Character";
 			Invoke ("EmptyText", 2f);
 			tutorialCount++;
 		}  else if (tutorialCount == 8) {
-			tutorialText.text = "Hindari battery dengan hasil operasi yang tidak sesuai dengan kode Character\nSalah battery menyebabkan energy berkurang";
+			tutorialText.text = "Hindari battery dengan hasil operasi yang tidak sesuai\nSalah battery menyebabkan energy berkurang";
 			Invoke ("EmptyText", 2f);
 			tutorialCount++;
 		}

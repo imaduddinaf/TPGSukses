@@ -1,10 +1,19 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\Runner2D.cs">
     <Files>
       <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="143" Column="49" />
       <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="89" Column="13" />
       <File FileName="Assets\TVRunner\Camera\ScreenS.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Level\Level\level.cs">
+    <Files>
+      <File FileName="Assets\TVRunner\Item\item.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="144" Column="3" />
+      <File FileName="Assets\TVRunner\Level\Level\level.cs" Line="42" Column="19" />
+>>>>>>> fca67780623d8a05b8062addceab14caa3cc3485
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
