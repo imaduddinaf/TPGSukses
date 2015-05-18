@@ -46,8 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\TVRunner\Platform\Menu\GUIrescaler.js" />
-     <Compile Include="Assets\TVRunner\Platform\Menu\PauseMenu.js" />
+     <Compile Include="Assets\TVRunner\Menu\GUIrescaler.js" />
+     <Compile Include="Assets\TVRunner\Menu\PauseMenu.js" />
      <None Include="Assets\TVRunner\anim direction.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

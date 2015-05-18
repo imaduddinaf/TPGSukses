@@ -47,17 +47,19 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\TVRunner\Battery\healthbar.cs" />
+     <Compile Include="Assets\TVRunner\Camera\CameraS.cs" />
      <Compile Include="Assets\TVRunner\Camera\ScreenS.cs" />
      <Compile Include="Assets\TVRunner\Item\item.cs" />
      <Compile Include="Assets\TVRunner\Level\Level\level.cs" />
      <Compile Include="Assets\TVRunner\Level\Tutorial\Tutorial.cs" />
      <Compile Include="Assets\TVRunner\Menu\Credits\Credits.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Main Menu\Backup.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Main Menu\GCollector.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" />
+     <Compile Include="Assets\TVRunner\Menu\Main Menu\MasterData.cs" />
      <Compile Include="Assets\TVRunner\Menu\Options\Options.cs" />
-     <Compile Include="Assets\TVRunner\Platform\Menu\Ingame\IngameMenu.cs" />
-     <Compile Include="Assets\TVRunner\Platform\Menu\Main Menu\Backup.cs" />
-     <Compile Include="Assets\TVRunner\Platform\Menu\Main Menu\MainMenu.cs" />
-     <Compile Include="Assets\TVRunner\Platform\Menu\Main Menu\MasterData.cs" />
-     <Compile Include="Assets\TVRunner\Platform\Menu\World Map\WorldMap.cs" />
+     <Compile Include="Assets\TVRunner\Menu\World Map\WorldMap.cs" />
      <Compile Include="Assets\TVRunner\Runner\3D\Runner.cs" />
      <Compile Include="Assets\TVRunner\Runner\Runner2D.cs" />
      <Compile Include="Assets\TVRunner\Runner\player.cs" />
