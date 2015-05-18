@@ -125,7 +125,7 @@ public class Runner2D : MonoBehaviour {
 				triggered = false;
 				triggeredTime = 0;
 			}
-			animator.SetInteger ("State", 2);
+			//animator.SetInteger ("State", 2);
 		}
 
 		//move runner

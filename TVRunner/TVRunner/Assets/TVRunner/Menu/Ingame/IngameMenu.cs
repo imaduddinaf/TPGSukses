@@ -17,6 +17,8 @@ public class IngameMenu : MonoBehaviour {
 	public Texture2D quit;
 	public Texture2D nextLevel;
 	public Texture2D star;
+	public Texture2D paused;
+	public Texture2D gameover;
 	//behaviour
 
 	public void Pause(){
@@ -107,37 +109,48 @@ public class IngameMenu : MonoBehaviour {
 			GUIStyle restartStyle = new GUIStyle();
 			//restartStyle.active.background = restart;
 			restartStyle.active.textColor = Color.red;
-
-			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), "pause");
+			//redup is good
+			GUI.Box (new Rect (0, 0, screenWidth, screenHeight), "");
+			//tulisan pause
+			GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - ((screenWidth * 0.3f) * 0.5f), (screenHeight * 0.2f), screenWidth * 0.3f, screenHeight * 0.12f), paused);
+			//box
+			//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), "");
 			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
 
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.45f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), resume)) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.2f * 0.5f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.2f, menuHeight * 0.2f), resume)) {
 				Debug.Log ("Resume");
 				Resume();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.45f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), restart)) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.2f * 2.0f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.2f, menuHeight * 0.2f), restart)) {
 				Debug.Log ("Restart");
 				Restart();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.45f) + (menuHeight * 0.15f) + ((distanceBetweenMenus * 2) + (menuHeight * 0.2f * 2)), menuWidth * 0.8f, menuHeight * 0.2f), quit)) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) + (menuWidth * 0.2f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.2f, menuHeight * 0.2f), quit)) {
 				Debug.Log ("Quit");
 				Quit ();
 			}
 		}
 		//menu gameover
 		if (gameOver) {
-			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "game over");
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f), menuWidth * 0.8f, menuHeight * 0.2f), restart)) {
+			//redup is good
+			GUI.Box (new Rect (0, 0, screenWidth, screenHeight), "");
+			//tulisan gameover
+			GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - ((screenWidth * 0.5f) * 0.5f), (screenHeight * 0.2f), screenWidth * 0.5f, screenHeight * 0.12f), gameover);
+			//box
+			//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "");
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.2f * 2.0f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.2f, menuHeight * 0.2f), restart)) {
 				Debug.Log ("Restart");
 				Restart();
 			}
-			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ) + (menuWidth * 0.1f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.8f, menuHeight * 0.2f), quit)) {
+			if (GUI.Button (new Rect ((screenWidth * 0.5f) + (menuWidth * 0.2f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.2f, menuHeight * 0.2f), quit)) {
 				Debug.Log ("Quit");
 				Quit ();
 			}
 		}
 		//menu win-congrats
 		if (congrats) {
+			//redup is good
+			GUI.Box (new Rect (0, 0, screenWidth, screenHeight), "");
 			//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "congratulations!!");
 			GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
 

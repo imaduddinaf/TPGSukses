@@ -1,10 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\Runner2D.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Menu\Ingame\IngameMenu.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\TVRunner\Runner\player.cs" Line="38" Column="15" />
       <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="119" Column="36" />
       <File FileName="Assets\TVRunner\Item\item.cs" Line="53" Column="36" />
+=======
+      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="88" Column="13" />
+      <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="128" Column="70" />
+>>>>>>> 3bf7b828cf17c0a3590fb956502c3d24487b98fd
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
