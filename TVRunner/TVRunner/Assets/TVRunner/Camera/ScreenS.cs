@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScreenS : MonoBehaviour {
 	
-	public float velocity;
+	private float velocity;
 	private Runner2D runner;
 	// Use this for initialization
 	void Start () {
