@@ -12,7 +12,9 @@ public class Runner2D : MonoBehaviour {
 
 	private Vector3 vel;
 	private Animator animator;
-	private bool triggered;
+	public bool triggered;
+	public bool trueTriggered;
+	public bool falseTriggered;
 	private bool jump;
 	private float triggeredTime;
 	private float curHeight;
@@ -54,6 +56,8 @@ public class Runner2D : MonoBehaviour {
 		triggered = false;
 		triggeredTime = 0;
 		jump = false;
+		trueTriggered = false;
+		falseTriggered = false;
 		curHeight = prevHeight = 0.0f;
 		score = tmpScore = 0;
 		textScore.text = "0000";
@@ -98,6 +102,22 @@ public class Runner2D : MonoBehaviour {
 				//Debug.Log("fall");
 				animator.SetInteger ("State", 3);
 			}
+			if (trueTriggered) {
+				triggeredTime += Time.deltaTime;
+				if (triggeredTime > 0.4) {
+					trueTriggered = false;
+					triggeredTime = 0;
+				}
+				animator.SetInteger("State",4);
+			}
+			if(falseTriggered){
+				triggeredTime += Time.deltaTime;
+				if (triggeredTime > 0.4) {
+					falseTriggered = false;
+					triggeredTime = 0;
+				}
+				animator.SetInteger("State",2);
+			}
 		}
 		if (triggered) {
 			triggeredTime += Time.deltaTime;
@@ -107,6 +127,7 @@ public class Runner2D : MonoBehaviour {
 			}
 			animator.SetInteger ("State", 2);
 		}
+
 		//move runner
 		transform.Translate(velocity * Time.deltaTime, 0f, 0f);
 		//Debug.Log (Application.loadedLevel + 1);
@@ -131,6 +152,7 @@ public class Runner2D : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "item") {
 			Destroy(col.gameObject);
+			triggered=false;
 		}
 		if(col.gameObject.name == "batas"){
 			tmpVelocity = 0;
