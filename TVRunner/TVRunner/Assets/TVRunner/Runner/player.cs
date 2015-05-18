@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class player : MonoBehaviour {
 
 	// Use this for initialization
+	private IngameMenu menu;
 	public TextMesh Test;
 	public int energy;
 	private int maxEnergy;
@@ -20,7 +21,8 @@ public class player : MonoBehaviour {
 		if (levelHandle == null){
 			Debug.Log ("Cannot find 'level' script");
 		}
-
+		GameObject menuObj = GameObject.Find ("Menu");
+		menu = menuObj.GetComponent <IngameMenu>();
 		energy = 12;
 		maxEnergy = energy;
 		/*if (Application.loadedLevelName == "Tutorial") 
@@ -34,9 +36,13 @@ public class player : MonoBehaviour {
 
 	void Update () {
 		if (energy == 0){
-			currentLevel = Application.loadedLevelName;
-			Application.LoadLevel(currentLevel);
+			Die ();
+			//currentLevel = Application.loadedLevelName;
+			//Application.LoadLevel(currentLevel);
 		}
+	}
+	void Die(){
+		menu.GameOver();
 	}
 
 	public void AddEnergy (int newEnergyValue){

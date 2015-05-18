@@ -11,6 +11,7 @@ public class level : MonoBehaviour {
 	public int batasMin;
 	public int energyDrain;
 	public int bonusEnergy;
+	public int scoreMax;
 	private string currentLevel;
 
 	// Use this for initialization
@@ -35,6 +36,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 1000;
 		}
 		else if (currentLevel == "Level 1") {
 			bonusEnergy = 0;
@@ -45,6 +47,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 2000;
 		}
 		else if(currentLevel == "Level 2"){
 			bonusEnergy = 0;
@@ -55,6 +58,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 2000;
 		}
 		else if (currentLevel == "Level 3") {
 			bonusEnergy = 0;
@@ -65,6 +69,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -4;
 			batasMax = 15;
 			batasMin = 0;
+			scoreMax = 2000;
 		}
 		else if(currentLevel == "Level 4"){
 			bonusEnergy = 0;
@@ -75,6 +80,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -4;
 			batasMax = 15;
 			batasMin = 0;
+			scoreMax = 3000;
 		}
 		else if (currentLevel == "Level 5") {
 			bonusEnergy = 0;
@@ -85,6 +91,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 2000;
 		}
 		else if(currentLevel == "Level 6"){
 			bonusEnergy = 0;
@@ -95,6 +102,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 2000;
 		}
 		else if (currentLevel == "Level 7") {
 			bonusEnergy = 0;
@@ -105,6 +113,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 3000;
 		}
 		else if(currentLevel == "Level 8"){
 			bonusEnergy = 0;
@@ -115,6 +124,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 3000;
 		}
 		else if (currentLevel == "Level 9") {
 			bonusEnergy = 0;
@@ -125,6 +135,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 3000;
 		}
 		else if(currentLevel == "Level 10"){
 			bonusEnergy = 0;
@@ -135,6 +146,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 3000;
 		}
 		else if (currentLevel == "Level 11") {
 			bonusEnergy = 0;
@@ -145,6 +157,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 4000;
 		}
 		else if(currentLevel == "Level 12"){
 			bonusEnergy = 0;
@@ -155,6 +168,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 4000;
 		}
 		else if(currentLevel == "Level 13"){
 			bonusEnergy = 0;
@@ -165,6 +179,7 @@ public class level : MonoBehaviour {
 			nilaiSalah = -3;
 			batasMax = 10;
 			batasMin = 0;
+			scoreMax = 4000;
 		}
 	}
 }

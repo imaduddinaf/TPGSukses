@@ -43,14 +43,14 @@ public class MasterData : MonoBehaviour {
 				"{\n" +
 					"\t" + "\"version\" : \"v 1.0\" " + ", \n" + 
 					"\t" + "\"volume\" : \"1.0\" " + ", \n" + 
-					"\t" + "\"levelmax\" : \"4\" " + ", \n" + 
+					"\t" + "\"levelmax\" : \"13\" " + ", \n" + 
 					"}";
 			File.WriteAllText (Application.dataPath + "/data.json", tmp);
 			LoadFromFile ();
 		} else {
 			LoadFromFile ();
 		}
-		levelMax = 4;
+		levelMax = 13;
 	}
 	
 	// Update is called once per frame

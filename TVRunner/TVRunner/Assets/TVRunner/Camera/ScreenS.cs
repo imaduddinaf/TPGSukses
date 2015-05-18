@@ -4,16 +4,20 @@ using System.Collections;
 public class ScreenS : MonoBehaviour {
 	
 	public float velocity;
+	private Runner2D runner;
 	// Use this for initialization
 	void Start () {
-		Runner2D runner = GetComponent<Runner2D> ();
-		if (runner != null) {
-			velocity = runner.velocity;
-		}
+		GameObject playerrObject = GameObject.Find ("Runner 2D");
+		runner = playerrObject.GetComponent <Runner2D> ();
+		//Runner2D runner = GetComponent<Runner2D> ();
+		//if (runner != null) {
+			velocity = runner.tmpVelocity;
+		//}
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		velocity = runner.tmpVelocity;
 		transform.Translate(velocity * Time.deltaTime, 0f, 0f);
 	}
 }
