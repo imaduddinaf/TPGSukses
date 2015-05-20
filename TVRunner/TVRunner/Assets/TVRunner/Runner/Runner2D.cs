@@ -41,9 +41,9 @@ public class Runner2D : MonoBehaviour {
 		//GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, jumpHeight);
 	}
 
-	void Win() {
+	void Win(float score) {
 		//Debug.Log ("Wiin");
-		menu.Congrats ();
+		menu.Congrats (score);
 	}
 
 	// Use this for initialization
@@ -125,7 +125,7 @@ public class Runner2D : MonoBehaviour {
 				triggered = false;
 				triggeredTime = 0;
 			}
-			//animator.SetInteger ("State", 2);
+			animator.SetInteger ("State", 2);
 		}
 
 		//move runner
@@ -163,16 +163,15 @@ public class Runner2D : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "portal") {
-			GetFinalScore();
 			Debug.Log("Next Level");
-			Win();
+			Win(GetFinalScore());
 		}
 		jump = false;
 		fall = false;
 		touchingPlatform = true;
 	}
 
-	void GetFinalScore(){
+	float GetFinalScore(){
 		float FinalScore;
 		FinalScore = score / levelHandle.scoreMax;
 		if(FinalScore < 0.34)
@@ -181,6 +180,7 @@ public class Runner2D : MonoBehaviour {
 			Debug.Log("Bintang 2");
 		else if (FinalScore <= 1) 
 			Debug.Log("Bintang 3");
+		return FinalScore;
 	}
 
 	public void AddScore (float scoreValue){

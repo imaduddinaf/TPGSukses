@@ -1,20 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Menu\Main Menu\MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Runner\Runner2D.cs">
     <Files>
-<<<<<<< HEAD
-      <File FileName="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" Line="58" Column="77" />
-      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="1" Column="1" />
-=======
-<<<<<<< HEAD
-      <File FileName="Assets\TVRunner\Runner\player.cs" Line="38" Column="15" />
-      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="119" Column="36" />
-      <File FileName="Assets\TVRunner\Item\item.cs" Line="53" Column="36" />
-=======
-      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="88" Column="13" />
->>>>>>> c296847f873c3ccb6815c7ce2b549023e1529e5b
-      <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="128" Column="70" />
->>>>>>> 3bf7b828cf17c0a3590fb956502c3d24487b98fd
+      <File FileName="Assets\TVRunner\Runner\Runner2D.cs" Line="194" Column="4" />
+      <File FileName="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Menu\Main Menu\MasterData.cs" Line="9" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

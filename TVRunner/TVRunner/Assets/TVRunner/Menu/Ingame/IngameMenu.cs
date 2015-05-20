@@ -8,6 +8,7 @@ public class IngameMenu : MonoBehaviour {
 	//menu
 	private float menuWidth;
 	private float menuHeight;
+	private float finalScore;
 	float screenWidth;
 	float screenHeight;
 	float distanceBetweenMenus;
@@ -36,8 +37,9 @@ public class IngameMenu : MonoBehaviour {
 		Time.timeScale = 0;
 	}
 
-	public void Congrats(){
+	public void Congrats(float score){
 		congrats = true;
+		finalScore = score;
 		Time.timeScale = 0;
 	}
 
@@ -67,6 +69,7 @@ public class IngameMenu : MonoBehaviour {
 		pauseEnabled = false;
 		gameOver = false;
 		congrats = false;
+		finalScore = 0;
 	}
 	
 	// Update is called once per frame
@@ -153,7 +156,29 @@ public class IngameMenu : MonoBehaviour {
 			GUI.Box (new Rect (0, 0, screenWidth, screenHeight), "");
 			//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "congratulations!!");
 			GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
-
+			//finalscore
+			if(finalScore < 0.34){
+				Debug.Log("Bintang 1");
+				//left
+				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+			}
+			else if (finalScore < 0.76) {
+				Debug.Log("Bintang 2");
+				//left
+				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				//mid
+				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 0.5f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+			}
+			else if (finalScore <= 1) {
+				Debug.Log("Bintang 3");
+				//left
+				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				//mid
+				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 0.5f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				//right
+				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) + (menuWidth * 0.125f * 0.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+			}
+			//
 			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.25f) + (distanceBetweenMenus + (menuHeight * 0.3f)), menuWidth * 0.15f, menuHeight * 0.15f), restart)) {
 				Debug.Log ("Restart");
 				Restart();

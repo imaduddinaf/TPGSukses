@@ -26,7 +26,7 @@ public class MasterData : MonoBehaviour {
 		node ["version"] = gameVersion;
 		node ["volume"].AsFloat = volume;
 		node ["levelmax"].AsInt = levelMax;
-		File.WriteAllText(Application.persistentDataPath + "/data.json", node.ToString());
+		File.WriteAllText(Application.dataPath + "/data.json", node.ToString());
 
 		//test
 		/*if (System.IO.File.Exists("myfile.txt"))
