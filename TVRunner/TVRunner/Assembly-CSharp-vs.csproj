@@ -72,6 +72,10 @@
  <HintPath>C:/Users/imaduddinalfikri/SkyDrive/Documents/Pengembangan Game/TPGSukses/TVRunner/TVRunner/Assets/plugins/ICSharpCode.SharpZipLib.dll</HintPath>
  </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass-vs.csproj">
+      <Project>{BD55C2EE-84D1-CB92-1B3B-05019C9A02AC}</Project>      <Name>Assembly-CSharp-firstpass-vs</Name>    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 	   Other similar extension points exist, see Microsoft.Common.targets.
