@@ -1,24 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 	private bool quit;
 	//menu
 	private float menuWidth;
 	private float menuHeight;
+	private GameObject sound;
+	private Image soundImg;
+	public Sprite mute;
+	public Sprite unmute;
 	// Use this for initialization
 	void Start () {
 		menuWidth = Screen.width * 0.5f;
 		menuHeight = Screen.height * 0.5f;
 		quit = false;
+		sound = GameObject.Find ("Sound");
+		soundImg = sound.GetComponent<Image> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown (KeyCode.Escape)) {
 			//Time.timeScale = 0;
-			Application.Quit();
+			//Application.Quit();
+			quit = true;
 			//Pause();
+		}
+		
+		if (AudioListener.volume == 0.0) {//mute
+			soundImg.sprite = mute;
+		} else {//unmute
+			soundImg.sprite = unmute;
 		}
 	
 	}
@@ -45,13 +59,20 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void OnClickMuteUnmute(){
-
+		Debug.Log (sound.name);
+		if (MasterData.volume == 0.0) {//unmute
+			MasterData.volume = 1.0f;
+			AudioListener.volume = 1.0f;
+		} else {//mute
+			MasterData.volume = 0.0f;
+			AudioListener.volume = 0.0f;
+		}
 	}
 
 	void OnGUI(){
 		float screenWidth = Screen.width;
 		float screenHeight = Screen.height;
-		float distanceBetweenMenus = menuHeight * 0.05f;
+		//float distanceBetweenMenus = menuHeight * 0.05f;
 		//menu pause
 		if (quit) {
 			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.5f * 0.25f), menuWidth, menuHeight * 0.5f), "Are you sure?");

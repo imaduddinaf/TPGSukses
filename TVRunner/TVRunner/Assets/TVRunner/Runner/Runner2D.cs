@@ -23,6 +23,9 @@ public class Runner2D : MonoBehaviour {
 	private float score;
 	private float tmpScore;
 	public GUIText textScore;
+	//sound
+	public AudioClip trueSound;
+	public AudioClip wrongSound;
 	//behaviour
 	void Die() {
 		//Debug.Log("Trigger Die");
@@ -45,7 +48,6 @@ public class Runner2D : MonoBehaviour {
 		//Debug.Log ("Wiin");
 		menu.Congrats (score);
 	}
-
 	// Use this for initialization
 	void Start () {
 		GameObject menuObj = GameObject.Find ("Menu");
@@ -103,6 +105,9 @@ public class Runner2D : MonoBehaviour {
 				animator.SetInteger ("State", 3);
 			}
 			if (trueTriggered) {
+				if (triggeredTime == 0.0) {
+					GetComponent <AudioSource> ().PlayOneShot (trueSound);
+				}
 				triggeredTime += Time.deltaTime;
 				if (triggeredTime > 0.4) {
 					trueTriggered = false;
@@ -111,6 +116,9 @@ public class Runner2D : MonoBehaviour {
 				animator.SetInteger("State",4);
 			}
 			if(falseTriggered){
+				if (triggeredTime == 0.0) {
+					GetComponent <AudioSource> ().PlayOneShot (wrongSound);
+				}
 				triggeredTime += Time.deltaTime;
 				if (triggeredTime > 0.4) {
 					falseTriggered = false;
@@ -152,11 +160,11 @@ public class Runner2D : MonoBehaviour {
 		}
 		if (col.gameObject.tag == "item") {
 			Destroy(col.gameObject);
-			triggered=false;
+			triggered = false;
 		}
 		if(col.gameObject.name == "batas"){
 			tmpVelocity = 0;
-			triggered=false;
+			triggered = false;
 		}
 	}
 

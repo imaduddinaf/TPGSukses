@@ -41,11 +41,11 @@ public class MasterData : MonoBehaviour {
 			Debug.Log("exist");
 			string tmp = 
 				"{\n" +
-					"\t" + "\"version\" : \"v 1.0\" " + ", \n" + 
+					"\t" + "\"version\" : \"v 1.1.1\" " + ", \n" + 
 					"\t" + "\"volume\" : \"1.0\" " + ", \n" + 
-					"\t" + "\"levelmax\" : \"13\" " + ", \n" + 
+					"\t" + "\"levelmax\" : \"7\" " + ", \n" + 
 					"}";
-			File.WriteAllText (Application.dataPath + "/data.json", tmp);
+			File.WriteAllText (Application.dataPath  + "/data.json", tmp);
 			LoadFromFile ();
 		} else {
 			LoadFromFile ();
@@ -57,6 +57,7 @@ public class MasterData : MonoBehaviour {
 	void Update () {
 		//Debug.Log (levelMax);
 		version.text = gameVersion;
+		AudioListener.volume = volume;
 		//Debug.Log (volume.ToString ());
 		/*if(Input.GetKeyDown("space")){
 			//volume += 0.1f;

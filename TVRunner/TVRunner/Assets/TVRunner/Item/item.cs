@@ -15,8 +15,9 @@ public class item : MonoBehaviour {
 	public int bilangan1;
 	public int bilangan2;
 	private int rnd;
+	//sound
 
-
+	//init
 	void Start () {
 		GameObject levelObject = GameObject.Find ("Level Handle");
 		if (levelObject != null){
