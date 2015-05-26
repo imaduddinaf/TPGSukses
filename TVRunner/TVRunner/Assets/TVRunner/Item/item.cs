@@ -84,7 +84,7 @@ public class item : MonoBehaviour {
 		if (type == true) {
 			scoreItem = 1000;
 			energyValue = levelHandle.nilaiBenar;
-			inOperasi = Random.Range (1, levelHandle.batasOperasi);
+			inOperasi = Random.Range (levelHandle.batasBoperasi, levelHandle.batasOperasi);
 			if (inOperasi == 1) {
 				bilangan1 = Random.Range (levelHandle.batasMin, playerr.playerValue+1);
 				bilangan2 = playerr.playerValue - bilangan1;
@@ -111,7 +111,7 @@ public class item : MonoBehaviour {
 		else {
 			scoreItem = -750;
 			energyValue = levelHandle.nilaiSalah;
-			inOperasi = Random.Range (1, levelHandle.batasOperasi);
+			inOperasi = Random.Range (levelHandle.batasBoperasi, levelHandle.batasOperasi);
 			bilangan1 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
 			bilangan2 = Random.Range(levelHandle.batasMin, levelHandle.batasMax);
 			if (inOperasi == 1) {
