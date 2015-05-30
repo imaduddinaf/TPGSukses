@@ -72,7 +72,7 @@ public class Runner2D : MonoBehaviour {
 	void Update () {		
 		curHeight = transform.position.y;
 		float travel = curHeight - prevHeight;
-		if (travel < 0) {
+		if (travel < 0 && !touchingPlatform) {
 			//Debug.Log("fall +");
 			fall = true;
 		} else if (travel > 0) {
@@ -84,7 +84,11 @@ public class Runner2D : MonoBehaviour {
 		/*if(Input.GetButtonDown("Submit")){
 			Time.timeScale = 1.0f;
 		}*/
+		if (!touchingPlatform && (Input.GetKeyDown("space"))) {
+			Debug.Log("rtrg");
+		}
 		if (touchingPlatform && (Input.GetKeyDown("space")/*GetButtonDown ("Jump") || Input.touchCount > 0*/)) {
+			Debug.Log("jump");
 			Jump();
 		}
 		//state 
@@ -96,16 +100,19 @@ public class Runner2D : MonoBehaviour {
 		if (touchingPlatform && !triggered && !fall) {
 			animator.SetInteger("State", 0);
 		}
-		if (!touchingPlatform && !triggered) {
-			if (jump) {
-				animator.SetInteger ("State", 1);
-			}
-			if (fall) {
-				//Debug.Log("fall");
-				animator.SetInteger ("State", 3);
+		if (!triggered) {
+			if (!touchingPlatform) {
+				if (jump) {
+					animator.SetInteger ("State", 1);
+				}
+				if (fall) {
+					//Debug.Log("fall");
+					animator.SetInteger ("State", 3);
+				}
 			}
 			if (trueTriggered) {
 				if (triggeredTime == 0.0) {
+					Debug.Log("bener");
 					GetComponent <AudioSource> ().PlayOneShot (trueSound);
 				}
 				triggeredTime += Time.deltaTime;
@@ -117,6 +124,7 @@ public class Runner2D : MonoBehaviour {
 			}
 			if(falseTriggered){
 				if (triggeredTime == 0.0) {
+					Debug.Log("salah");
 					GetComponent <AudioSource> ().PlayOneShot (wrongSound);
 				}
 				triggeredTime += Time.deltaTime;
@@ -168,14 +176,15 @@ public class Runner2D : MonoBehaviour {
 		}
 	}
 
-
+	int asd = 0;
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "portal") {
-			Debug.Log("Next Level");
+			//Debug.Log("Next Level");
 			Win(GetFinalScore());
 		}
 		jump = false;
 		fall = false;
+		Debug.Log("asdasd" + asd++);
 		touchingPlatform = true;
 	}
 

@@ -72,7 +72,7 @@ public class IngameMenu : MonoBehaviour {
 
 	public void NextLevel() {
 		MasterData.currentLevel += 1;
-		Debug.Log (MasterData.currentLevel + ".." + MasterData.levelMax);
+		//Debug.Log (MasterData.currentLevel + ".." + MasterData.levelMax);
 		if (MasterData.currentLevel > MasterData.levelMax) {
 			Application.LoadLevel ("World Map");
 		} else {
@@ -216,19 +216,19 @@ public class IngameMenu : MonoBehaviour {
 			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
 			//finalscore
 			if(finalScore < 0.34){
-				Debug.Log("Bintang 1");
+				//Debug.Log("Bintang 1");
 				//left
 				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 			}
 			else if (finalScore < 0.76) {
-				Debug.Log("Bintang 2");
+				//Debug.Log("Bintang 2");
 				//left
 				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 				//mid
 				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 0.5f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 			}
 			else if (finalScore <= 1) {
-				Debug.Log("Bintang 3");
+				//Debug.Log("Bintang 3");
 				//left
 				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 				//mid

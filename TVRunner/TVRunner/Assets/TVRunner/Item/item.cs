@@ -52,11 +52,13 @@ public class item : MonoBehaviour {
 				runnerObj.triggered=false;
 				runnerObj.trueTriggered=true;
 				runnerObj.falseTriggered=false;
+				Debug.Log("benerr");
 			}
 			if(!type){
 				runnerObj.triggered=false;
 				runnerObj.falseTriggered=true;
 				runnerObj.trueTriggered=false;
+				Debug.Log("salahh");
 			}
 		}
 	}

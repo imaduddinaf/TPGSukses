@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void OnClickMuteUnmute(){
-		Debug.Log (sound.name);
+		//Debug.Log (sound.name);
 		if (MasterData.volume == 0.0) {//unmute
 			MasterData.volume = 1.0f;
 			AudioListener.volume = 1.0f;
@@ -77,11 +77,11 @@ public class MainMenu : MonoBehaviour {
 		if (quit) {
 			GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.5f * 0.25f), menuWidth, menuHeight * 0.5f), "Are you sure?");
 			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.3f * 1.5f), (screenHeight * 0.5f), menuWidth * 0.3f, menuHeight * 0.2f), "Cancel")) {
-				Debug.Log ("Cancel Quit");
+				//Debug.Log ("Cancel Quit");
 				quit = false;
 			}
 			if (GUI.Button (new Rect ((screenWidth * 0.5f) + (menuWidth * 0.3f * 0.5f), (screenHeight * 0.5f), menuWidth * 0.3f, menuHeight * 0.2f), "Quit")) {
-				Debug.Log ("Quit");
+				//Debug.Log ("Quit");
 				Quit ();
 			}
 		}

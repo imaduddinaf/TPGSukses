@@ -38,14 +38,14 @@ public class MasterData : MonoBehaviour {
 	void Start () {
 		//DontDestroyOnLoad (transform.gameObject);
 		if (System.IO.File.Exists ("data.json")) {
-			Debug.Log("exist");
+			//Debug.Log("exist");
 			string tmp = 
 				"{\n" +
 					"\t" + "\"version\" : \"v 1.1.1\" " + ", \n" + 
 					"\t" + "\"volume\" : \"1.0\" " + ", \n" + 
 					"\t" + "\"levelmax\" : \"7\" " + ", \n" + 
 					"}";
-			File.WriteAllText (Application.dataPath  + "/data.json", tmp);
+			File.WriteAllText (Application.dataPath + "/data.json", tmp);
 			LoadFromFile ();
 		} else {
 			LoadFromFile ();
