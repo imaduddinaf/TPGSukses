@@ -110,6 +110,7 @@ public class Runner2D : MonoBehaviour {
 					animator.SetInteger ("State", 3);
 				}
 			}
+<<<<<<< HEAD
 			if (trueTriggered) {
 				if (triggeredTime == 0.0) {
 					Debug.Log("bener");
@@ -133,7 +134,31 @@ public class Runner2D : MonoBehaviour {
 					triggeredTime = 0;
 				}
 				animator.SetInteger("State",2);
+=======
+
+		}
+		if (trueTriggered) {
+			if (triggeredTime == 0.0) {
+				GetComponent <AudioSource> ().PlayOneShot (trueSound);
 			}
+			triggeredTime += Time.deltaTime;
+			if (triggeredTime > 0.4) {
+				trueTriggered = false;
+				triggeredTime = 0;
+			}
+			animator.SetInteger("State",4);
+		}
+		if(falseTriggered){
+			if (triggeredTime == 0.0) {
+				GetComponent <AudioSource> ().PlayOneShot (wrongSound);
+			}
+			triggeredTime += Time.deltaTime;
+			if (triggeredTime > 0.4) {
+				falseTriggered = false;
+				triggeredTime = 0;
+>>>>>>> b95a5d3eecb07e7d00eaeb938b049f848d4802f8
+			}
+			animator.SetInteger("State",2);
 		}
 		if (triggered) {
 			triggeredTime += Time.deltaTime;
