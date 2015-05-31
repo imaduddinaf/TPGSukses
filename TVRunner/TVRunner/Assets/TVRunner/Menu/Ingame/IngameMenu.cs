@@ -214,6 +214,8 @@ public class IngameMenu : MonoBehaviour {
 			//GUI.Box (new Rect (0, 0, screenWidth, screenHeight), "");
 			//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "congratulations!!");
 			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
+			float tmp = MasterData.ChangeHighScore(Application.loadedLevelName, finalScore);
+			//final
 			//finalscore
 			if(finalScore < 0.34){
 				//Debug.Log("Bintang 1");

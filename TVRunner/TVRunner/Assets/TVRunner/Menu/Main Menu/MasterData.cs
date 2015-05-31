@@ -13,7 +13,7 @@ public class MasterData : MonoBehaviour {
 	public static int levelMax;
 	void LoadFromFile(){
 		//json
-		SimpleJSON.JSONNode node = SimpleJSON.JSONNode.Parse(File.ReadAllText(Application.dataPath +"/data.json"));
+		SimpleJSON.JSONNode node = SimpleJSON.JSONNode.Parse(File.ReadAllText(Application.persistentDataPath +"/data.json"));
 		gameVersion = node ["version"];
 		volume = node ["volume"].AsFloat;
 		levelMax = node ["levelmax"].AsInt;
@@ -22,11 +22,11 @@ public class MasterData : MonoBehaviour {
 	}
 	public static void WriteToFile(){
 		//json
-		SimpleJSON.JSONNode node = SimpleJSON.JSONNode.Parse(File.ReadAllText(Application.dataPath +"/data.json"));
+		SimpleJSON.JSONNode node = SimpleJSON.JSONNode.Parse(File.ReadAllText(Application.persistentDataPath +"/data.json"));
 		node ["version"] = gameVersion;
 		node ["volume"].AsFloat = volume;
 		node ["levelmax"].AsInt = levelMax;
-		File.WriteAllText(Application.dataPath + "/data.json", node.ToString());
+		File.WriteAllText(Application.persistentDataPath + "/data.json", node.ToString());
 
 		//test
 		/*if (System.IO.File.Exists("myfile.txt"))
@@ -34,8 +34,25 @@ public class MasterData : MonoBehaviour {
 			//do stuff
 		}*/
 	}
+	private void SetPlayerPrefs() {
+		for (int i = 1; i <= 7; i++) {
+			if(PlayerPrefs.HasKey ("Level " + i) == false){
+				PlayerPrefs.SetFloat ("Level " + i, 0.0f);
+			}
+		}
+	}
+	public static float ChangeHighScore(string lvl, float scr){
+		//jika lebih besar, set
+		if (PlayerPrefs.GetFloat (lvl) < scr) { 
+			PlayerPrefs.SetFloat (lvl, scr);
+			return scr;
+		} 
+		return PlayerPrefs.GetFloat (lvl);
+		//jika tidak, abaikan
+	}
 	// Use this for initialization
 	void Start () {
+		SetPlayerPrefs ();
 		//DontDestroyOnLoad (transform.gameObject);
 		if (System.IO.File.Exists ("data.json")) {
 			//Debug.Log("exist");
@@ -45,7 +62,7 @@ public class MasterData : MonoBehaviour {
 					"\t" + "\"volume\" : \"1.0\" " + ", \n" + 
 					"\t" + "\"levelmax\" : \"7\" " + ", \n" + 
 					"}";
-			File.WriteAllText (Application.dataPath + "/data.json", tmp);
+			File.WriteAllText (Application.persistentDataPath + "/data.json", tmp);
 			LoadFromFile ();
 		} else {
 			LoadFromFile ();

@@ -110,7 +110,7 @@ public class Runner2D : MonoBehaviour {
 					animator.SetInteger ("State", 3);
 				}
 			}
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 			if (trueTriggered) {
 				if (triggeredTime == 0.0) {
 					Debug.Log("bener");
@@ -134,7 +134,7 @@ public class Runner2D : MonoBehaviour {
 					triggeredTime = 0;
 				}
 				animator.SetInteger("State",2);
-=======
+=======*/
 
 		}
 		if (trueTriggered) {
@@ -156,7 +156,7 @@ public class Runner2D : MonoBehaviour {
 			if (triggeredTime > 0.4) {
 				falseTriggered = false;
 				triggeredTime = 0;
->>>>>>> b95a5d3eecb07e7d00eaeb938b049f848d4802f8
+//>>>>>>> b95a5d3eecb07e7d00eaeb938b049f848d4802f8
 			}
 			animator.SetInteger("State",2);
 		}
