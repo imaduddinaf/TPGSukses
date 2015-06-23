@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Menu\Main Menu\MasterData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="F:\SAYA\Kuliah\Gemastik\Game\Gemastik\Gemastik\Assets\Camera\ScreenS.cs">
     <Files>
-      <File FileName="Assets\TVRunner\Menu\SceneFadeInOut.cs" Line="67" Column="37" />
-      <File FileName="Assets\TVRunner\Menu\Main Menu\MasterData.cs" Line="36" Column="3" />
-      <File FileName="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" Line="1" Column="1" />
+      <File FileName="F:\SAYA\Kuliah\Gemastik\Game\Gemastik\Gemastik\Assets\Camera\ScreenS.cs" Line="6" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

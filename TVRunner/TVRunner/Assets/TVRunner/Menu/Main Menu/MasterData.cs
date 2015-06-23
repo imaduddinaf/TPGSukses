@@ -54,7 +54,7 @@ public class MasterData : MonoBehaviour {
 	void Start () {
 		SetPlayerPrefs ();
 		//DontDestroyOnLoad (transform.gameObject);
-		if (System.IO.File.Exists ("data.json")) {
+		if (!System.IO.File.Exists ("data.json")) {
 			//Debug.Log("exist");
 			string tmp = 
 				"{\n" +
