@@ -1,8 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="F:\SAYA\Kuliah\Gemastik\Game\Gemastik\Gemastik\Assets\Camera\ScreenS.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Menu\World Map\WorldMap.cs">
     <Files>
-      <File FileName="F:\SAYA\Kuliah\Gemastik\Game\Gemastik\Gemastik\Assets\Camera\ScreenS.cs" Line="6" Column="25" />
+      <File FileName="Assets\data.json" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Menu\Main Menu\MasterData.cs" Line="69" Column="4" />
+      <File FileName="Assets\TVRunner\Menu\Ingame\IngameMenu.cs" Line="64" Column="19" />
+      <File FileName="Assets\TVRunner\Menu\Main Menu\MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Menu\Options\Options.cs" Line="1" Column="1" />
+      <File FileName="Assets\TVRunner\Menu\World Map\WorldMap.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

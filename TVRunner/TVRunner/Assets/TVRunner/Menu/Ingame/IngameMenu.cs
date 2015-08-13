@@ -26,6 +26,7 @@ public class IngameMenu : MonoBehaviour {
 	public GameObject menu;
 	public GameObject pauseMenu;
 	public Button[] menu1;
+	private Animator pauseAnim;
 	/*
 	public Button resumePauseMenu;
 	public Button restartPauseMenu;
@@ -36,6 +37,9 @@ public class IngameMenu : MonoBehaviour {
 	public Button restartGOMenu;
 	public Button quitGOMenu;*/
 	public GameObject congratsMenu;
+	public GameObject star1;
+	public GameObject star2;
+	public GameObject star3;
 	public Button[] menu3;
 	/*
 	public Button nextCongratsMenu;
@@ -46,6 +50,8 @@ public class IngameMenu : MonoBehaviour {
 
 	public void Pause(){
 		pauseEnabled = true;
+		pauseAnim.enabled = true;
+		pauseAnim.Play ("Pause");
 		Time.timeScale = 0;
 	}
 
@@ -74,6 +80,7 @@ public class IngameMenu : MonoBehaviour {
 		MasterData.currentLevel += 1;
 		//Debug.Log (MasterData.currentLevel + ".." + MasterData.levelMax);
 		if (MasterData.currentLevel > MasterData.levelMax) {
+			MasterData.currentLevel = 0;
 			Application.LoadLevel ("World Map");
 		} else {
 			Application.LoadLevel ("Level " + MasterData.currentLevel);
@@ -96,6 +103,8 @@ public class IngameMenu : MonoBehaviour {
 		menu = GameObject.Find ("Menu");
 		pauseMenu = GameObject.Find ("Pause");
 		menu1 = pauseMenu.GetComponents<Button> ();
+		pauseAnim = pauseMenu.GetComponent<Animator> ();
+		pauseAnim.enabled = false;
 		/*
 		resumePauseMenu = (Button) GameObject.Find ("Resume");
 		restartPauseMenu = (Button) GameObject.Find ("Restart");
@@ -106,6 +115,9 @@ public class IngameMenu : MonoBehaviour {
 		restartGOMenu = (Button) GameObject.Find ("Restart1");
 		quitGOMenu = (Button) GameObject.Find ("Quit1");*/
 		congratsMenu = GameObject.Find ("Congrats");
+		star1 = GameObject.Find ("Star1");
+		star2 = GameObject.Find ("Star2");
+		star3 = GameObject.Find ("Star3");
 		menu3 = congratsMenu.GetComponents<Button> ();
 		/*
 		extCongratsMenu = (Button) GameObject.Find ("Next");
@@ -114,6 +126,9 @@ public class IngameMenu : MonoBehaviour {
 		pauseMenu.SetActive(false);
 		gameOverMenu.SetActive(false);
 		congratsMenu.SetActive(false);
+		star1.SetActive (false);
+		star2.SetActive (false);
+		star3.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -173,7 +188,7 @@ public class IngameMenu : MonoBehaviour {
 			//redup is good
 			//GUI.Box (new Rect (0, 0, screenWidth, screenHeight), "");
 			//tulisan pause
-			GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - ((screenWidth * 0.3f) * 0.5f), (screenHeight * 0.2f), screenWidth * 0.3f, screenHeight * 0.12f), paused);
+			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - ((screenWidth * 0.3f) * 0.5f), (screenHeight * 0.2f), screenWidth * 0.3f, screenHeight * 0.12f), paused);
 			//box
 			/*//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), "");
 			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
@@ -196,7 +211,7 @@ public class IngameMenu : MonoBehaviour {
 			//redup is good
 			//GUI.Box (new Rect (0, 0, screenWidth, screenHeight), "");
 			//tulisan gameover
-			GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - ((screenWidth * 0.5f) * 0.5f), (screenHeight * 0.2f), screenWidth * 0.5f, screenHeight * 0.12f), gameover);
+			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - ((screenWidth * 0.5f) * 0.5f), (screenHeight * 0.2f), screenWidth * 0.5f, screenHeight * 0.12f), gameover);
 			//box
 			/*//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "");
 			if (GUI.Button (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.2f * 2.0f), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.15f) + (distanceBetweenMenus + (menuHeight * 0.2f)), menuWidth * 0.2f, menuHeight * 0.2f), restart)) {
@@ -220,23 +235,29 @@ public class IngameMenu : MonoBehaviour {
 			if(finalScore < 0.34){
 				//Debug.Log("Bintang 1");
 				//left
-				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				star1.SetActive(true);
+				//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 			}
 			else if (finalScore < 0.76) {
 				//Debug.Log("Bintang 2");
 				//left
-				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				star1.SetActive(true);
+				//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 				//mid
-				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 0.5f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				star2.SetActive(true);
+				//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 0.5f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 			}
 			else if (finalScore <= 1) {
 				//Debug.Log("Bintang 3");
 				//left
-				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				star1.SetActive(true);
+				//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 1.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 				//mid
-				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 0.5f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				star2.SetActive(true);
+				//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (menuWidth * 0.125f * 0.5f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 				//right
-				GUI.DrawTexture (new Rect ((screenWidth * 0.5f) + (menuWidth * 0.125f * 0.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
+				star3.SetActive(true);
+				//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) + (menuWidth * 0.125f * 0.4f), (screenHeight * 0.5f) - (menuHeight * 0.155f * 0.6f), menuWidth * 0.125f, menuHeight * 0.155f), star);
 			}
 			//
 			/*if (GUI.Button (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f ), (screenHeight * 0.5f) - (screenHeight * 0.35f) + (menuHeight * 0.25f) + (distanceBetweenMenus + (menuHeight * 0.3f)), menuWidth * 0.15f, menuHeight * 0.15f), restart)) {

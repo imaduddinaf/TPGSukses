@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MasterData : MonoBehaviour {
 	private string data;
 	public Text version;
-	public static int currentLevel = 0;
+	public static int currentLevel;
 	public static float volume;
 	public static string gameVersion;
 	public static int levelMax;
@@ -35,7 +35,7 @@ public class MasterData : MonoBehaviour {
 		}*/
 	}
 	private void SetPlayerPrefs() {
-		for (int i = 1; i <= 7; i++) {
+		for (int i = 1; i <= 5; i++) {
 			if(PlayerPrefs.HasKey ("Level " + i) == false){
 				PlayerPrefs.SetFloat ("Level " + i, 0.0f);
 			}
@@ -60,14 +60,14 @@ public class MasterData : MonoBehaviour {
 				"{\n" +
 					"\t" + "\"version\" : \"v 1.1.1\" " + ", \n" + 
 					"\t" + "\"volume\" : \"1.0\" " + ", \n" + 
-					"\t" + "\"levelmax\" : \"7\" " + ", \n" + 
+					"\t" + "\"levelmax\" : \"5\" " + ", \n" + 
 					"}";
 			File.WriteAllText (Application.persistentDataPath + "/data.json", tmp);
 			LoadFromFile ();
 		} else {
 			LoadFromFile ();
 		}
-		levelMax = 13;
+		currentLevel = 0;
 	}
 	
 	// Update is called once per frame
