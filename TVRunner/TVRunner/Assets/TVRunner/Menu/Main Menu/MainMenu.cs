@@ -67,6 +67,7 @@ public class MainMenu : MonoBehaviour {
 			MasterData.volume = 0.0f;
 			AudioListener.volume = 0.0f;
 		}
+		MasterData.WriteToFile ();
 	}
 
 	void OnGUI(){

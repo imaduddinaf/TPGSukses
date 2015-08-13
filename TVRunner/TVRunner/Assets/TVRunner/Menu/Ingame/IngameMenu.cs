@@ -21,21 +21,13 @@ public class IngameMenu : MonoBehaviour {
 	public Texture2D star;
 	public Texture2D paused;
 	public Texture2D gameover;
-	//private float MyGUIAlpha = 0.5f;
 	//menu
 	public GameObject menu;
 	public GameObject pauseMenu;
 	public Button[] menu1;
 	private Animator pauseAnim;
-	/*
-	public Button resumePauseMenu;
-	public Button restartPauseMenu;
-	public Button quitPauseMenu;*/
 	public GameObject gameOverMenu;
 	public Button[] menu2;
-	/*
-	public Button restartGOMenu;
-	public Button quitGOMenu;*/
 	public GameObject congratsMenu;
 	public GameObject star1;
 	public GameObject star2;
@@ -69,6 +61,9 @@ public class IngameMenu : MonoBehaviour {
 		congrats = true;
 		finalScore = score;
 		Time.timeScale = 0;
+		MasterData.currentLevel += 1;
+		Debug.Log (MasterData.currentLevel + " <:> " + MasterData.levelMax);
+		MasterData.ChangeLevelMax ();
 	}
 
 	public void Quit(){
@@ -77,9 +72,8 @@ public class IngameMenu : MonoBehaviour {
 	}
 
 	public void NextLevel() {
-		MasterData.currentLevel += 1;
 		//Debug.Log (MasterData.currentLevel + ".." + MasterData.levelMax);
-		if (MasterData.currentLevel > MasterData.levelMax) {
+		if (MasterData.currentLevel > MasterData.maxLevel) {
 			MasterData.currentLevel = 0;
 			Application.LoadLevel ("World Map");
 		} else {
@@ -230,6 +224,7 @@ public class IngameMenu : MonoBehaviour {
 			//GUI.Box (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.25f), (screenHeight * 0.5f) - (screenHeight * 0.35f), menuWidth, menuHeight), "congratulations!!");
 			//GUI.DrawTexture (new Rect ((screenWidth * 0.5f) - (screenWidth * 0.35f), (screenHeight * 0.5f) - (screenHeight * 0.45f), menuWidth, menuHeight), ingameMenuBg, ScaleMode.ScaleToFit, true);
 			float tmp = MasterData.ChangeHighScore(Application.loadedLevelName, finalScore);
+			Debug.Log(finalScore + " -- " + PlayerPrefs.GetFloat(Application.loadedLevelName));
 			//final
 			//finalscore
 			if(finalScore < 0.34){
