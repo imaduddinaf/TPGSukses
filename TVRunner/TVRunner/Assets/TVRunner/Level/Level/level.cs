@@ -16,6 +16,8 @@ public class level : MonoBehaviour {
 	public int jumlahBenar;
 	public int jumlahSalah;
 	private string currentLevel;
+	public int[, ] itemTrueGroup = new int[100, 1];
+	public int jumlahGroup;
 
 	// Use this for initialization
 	void Start () {
@@ -56,6 +58,7 @@ public class level : MonoBehaviour {
 			jumlahBenar = 2;
 			jumlahSalah = 2;
 			scoreMax = 2000;
+			jumlahGroup = 3;
 		}
 		else if(currentLevel == "Level 2"){
 			bonusEnergy = 0;
@@ -69,6 +72,7 @@ public class level : MonoBehaviour {
 			jumlahBenar = 2;
 			jumlahSalah = 2;
 			scoreMax = 2000;
+			jumlahGroup = 3;
 		}
 		else if (currentLevel == "Level 3") {
 			bonusEnergy = 0;
@@ -82,6 +86,10 @@ public class level : MonoBehaviour {
 			jumlahBenar = 2;
 			jumlahSalah = 2;
 			scoreMax = 2000;
+			jumlahGroup = 2;
+			for (int i = 1; i <= jumlahGroup; i++) {
+				itemTrueGroup[i, 0] = 1;
+			}
 		}
 		else if(currentLevel == "Level 4"){
 			bonusEnergy = 0;

@@ -4,7 +4,7 @@ using System.Collections;
 public class item : MonoBehaviour {
 
 	// Use this for initialization
-	private bool type;
+	public bool type;
 	private int energyValue;
 	private float scoreItem;
 	private player playerr;
@@ -15,6 +15,9 @@ public class item : MonoBehaviour {
 	public int bilangan1;
 	public int bilangan2;
 	private int rnd;
+	public string name;
+	public int number;
+	public int group;
 	//sound
 
 	//init
@@ -34,7 +37,35 @@ public class item : MonoBehaviour {
 		if (playerr == null){
 			Debug.Log ("Cannot find 'player' script");
 		}
+		//menentukan true atau false
 		runnerObj = playerrObject.GetComponent <Runner2D> ();
+		name = this.gameObject.name;
+		number = int.Parse (name);
+		Debug.Log ("===================");
+		rnd = Random.Range (0, 2);
+		//random apakah item ini nanti benar atau salah
+		if (levelHandle.itemTrueGroup [group, 0] == 1) {
+			if (number % 2 == 0) { //genap
+				type = true;
+				Debug.Log(number + " true");
+				levelHandle.itemTrueGroup [group, 0] = 0;
+			}
+			else {
+				if (rnd == 0) {
+					type = false;
+					Debug.Log(number + " false");
+				} 
+				else {
+					type = true;
+					Debug.Log(number + " true");
+					levelHandle.itemTrueGroup [group, 0] = 0;
+				}
+			}
+		} 
+		else {
+			Debug.Log(number + " false");
+			type = false;
+		}
 		Invoke("GetOperasi",0.01f);
 	}
 
@@ -65,24 +96,6 @@ public class item : MonoBehaviour {
 
 
 	void GetOperasi(){
-		rnd = Random.Range (0, 2);
-		if (rnd == 0) {
-			if (levelHandle.jumlahBenar == 0) {
-				type = false;
-				levelHandle.jumlahSalah--;
-			} else {
-				type = true;
-				levelHandle.jumlahBenar--;
-			}
-		} else if (rnd == 1) {
-			if (levelHandle.jumlahSalah == 0) {
-				type = true;
-				levelHandle.jumlahBenar--;
-			} else {
-				type = false;
-				levelHandle.jumlahSalah--;
-			}
-		}
 		if (type == true) {
 			scoreItem = 1000;
 			energyValue = levelHandle.nilaiBenar;

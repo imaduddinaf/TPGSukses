@@ -54,8 +54,8 @@ public class healthbar : MonoBehaviour {
 
 	void GetHealth(){
 		maxHealth = playerr.energy;
-		Debug.Log ("maxhealth" +maxHealth);
+		//Debug.Log ("maxhealth" +maxHealth);
 		currentHealth = maxHealth;
-		Debug.Log ("currenthealt" +currentHealth);
+		//Debug.Log ("currenthealt" +currentHealth);
 	}
 }
