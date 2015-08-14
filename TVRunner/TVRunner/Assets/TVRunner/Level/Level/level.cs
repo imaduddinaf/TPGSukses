@@ -32,6 +32,12 @@ public class level : MonoBehaviour {
 	
 	}
 
+	void InitTrueGroup(){
+		for (int i = 1; i <= jumlahGroup; i++) {
+			itemTrueGroup[i, 0] = 1;
+		}
+	}
+
 	void LevelHandler(){
 		if (currentLevel == "Tutorial") {
 			bonusEnergy = 0;
@@ -59,6 +65,7 @@ public class level : MonoBehaviour {
 			jumlahSalah = 2;
 			scoreMax = 2000;
 			jumlahGroup = 3;
+			InitTrueGroup();
 		}
 		else if(currentLevel == "Level 2"){
 			bonusEnergy = 0;
@@ -73,6 +80,7 @@ public class level : MonoBehaviour {
 			jumlahSalah = 2;
 			scoreMax = 2000;
 			jumlahGroup = 3;
+			InitTrueGroup();
 		}
 		else if (currentLevel == "Level 3") {
 			bonusEnergy = 0;
@@ -87,9 +95,7 @@ public class level : MonoBehaviour {
 			jumlahSalah = 2;
 			scoreMax = 2000;
 			jumlahGroup = 2;
-			for (int i = 1; i <= jumlahGroup; i++) {
-				itemTrueGroup[i, 0] = 1;
-			}
+			InitTrueGroup();
 		}
 		else if(currentLevel == "Level 4"){
 			bonusEnergy = 0;
