@@ -25,10 +25,10 @@ public class player : MonoBehaviour {
 		menu = menuObj.GetComponent <IngameMenu>();
 		energy = 100;
 		maxEnergy = energy;
-		/*if (Application.loadedLevelName == "Tutorial") 
+		if (Application.loadedLevelName == "Tutorial") 
 			InvokeRepeating("DecreaseBattery", 18f, 1f);
 		else 
-			InvokeRepeating("DecreaseBattery", 1f, levelHandle.energyDrain);*/
+			InvokeRepeating("DecreaseBattery", 1f, levelHandle.energyDrain);
 		Invoke ("GetValue", 0f);
 		//playerValue = Random.Range (1, levelHandle.batasPlayer);
 		///Test.text = "" + playerValue;

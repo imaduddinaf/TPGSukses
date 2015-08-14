@@ -9,6 +9,9 @@ public class Runner2D : MonoBehaviour {
 	private level levelHandle;
 	private bool touchingPlatform;
 	private float tmpX;
+	public bool died;
+	public bool finished;
+	public TextMesh Test;
 
 	private Vector3 vel;
 	private Animator animator;
@@ -17,6 +20,7 @@ public class Runner2D : MonoBehaviour {
 	public bool falseTriggered;
 	private bool jump;
 	private float triggeredTime;
+	private float teleTime;
 	private float curHeight;
 	private float prevHeight;
 	private bool fall;
@@ -29,6 +33,7 @@ public class Runner2D : MonoBehaviour {
 	//behaviour
 	void Die() {
 		//Debug.Log("Trigger Die");
+		died = true;
 		menu.GameOver ();
 		//Time.timeScale = 0;
 		//MasterData.currentLevel = 0;
@@ -46,6 +51,7 @@ public class Runner2D : MonoBehaviour {
 
 	void Win(float score) {
 		//Debug.Log ("Wiin");
+		finished = true;
 		menu.Congrats (score);
 	}
 	// Use this for initialization
@@ -57,6 +63,7 @@ public class Runner2D : MonoBehaviour {
 		animator.SetInteger("State", 0);
 		triggered = false;
 		triggeredTime = 0;
+		teleTime = 0;
 		jump = false;
 		trueTriggered = false;
 		falseTriggered = false;
@@ -66,6 +73,8 @@ public class Runner2D : MonoBehaviour {
 		tmpVelocity = velocity;
 		GameObject levelObject = GameObject.Find ("Level Handle");
 		levelHandle = levelObject.GetComponent <level>();
+		died = false;
+		finished = false;
 	}
 	
 	// Update is called once per frame
@@ -97,19 +106,30 @@ public class Runner2D : MonoBehaviour {
 		//2 - wrong
 		//3 - fall
 		//4 - true
-		if (touchingPlatform && !triggered && !fall) {
-			animator.SetInteger("State", 0);
-		}
-		if (!triggered) {
-			if (!touchingPlatform) {
-				if (jump) {
-					animator.SetInteger ("State", 1);
-				}
-				if (fall) {
-					//Debug.Log("fall");
-					animator.SetInteger ("State", 3);
-				}
+		//5 - finish
+		//6 - dead
+		if (finished) {
+			teleTime += Time.deltaTime;
+			if (teleTime > 1) {
+				teleTime = 0;
+				gameObject.GetComponent<SpriteRenderer>().enabled = false;
 			}
+			animator.SetInteger ("State", 5);
+		}
+		if (!died && !finished) {
+			if (touchingPlatform && !triggered && !fall) {
+				animator.SetInteger ("State", 0);
+			}
+			if (!triggered) {
+				if (!touchingPlatform) {
+					if (jump) {
+						animator.SetInteger ("State", 1);
+					}
+					if (fall) {
+						//Debug.Log("fall");
+						animator.SetInteger ("State", 3);
+					}
+				}
 /*<<<<<<< HEAD
 			if (trueTriggered) {
 				if (triggeredTime == 0.0) {
@@ -135,38 +155,43 @@ public class Runner2D : MonoBehaviour {
 				}
 				animator.SetInteger("State",2);
 =======*/
-
-		}
-		if (trueTriggered) {
-			if (triggeredTime == 0.0) {
-				GetComponent <AudioSource> ().PlayOneShot (trueSound);
 			}
-			triggeredTime += Time.deltaTime;
-			if (triggeredTime > 0.4) {
-				trueTriggered = false;
-				triggeredTime = 0;
+			if (trueTriggered) {
+				if (triggeredTime == 0.0) {
+					GetComponent <AudioSource> ().PlayOneShot (trueSound);
+				}
+				triggeredTime += Time.deltaTime;
+				if (triggeredTime > 0.4) {
+					trueTriggered = false;
+					triggeredTime = 0;
+				}
+				animator.SetInteger ("State", 4);
 			}
-			animator.SetInteger("State",4);
-		}
-		if(falseTriggered){
-			if (triggeredTime == 0.0) {
-				GetComponent <AudioSource> ().PlayOneShot (wrongSound);
-			}
-			triggeredTime += Time.deltaTime;
-			if (triggeredTime > 0.4) {
-				falseTriggered = false;
-				triggeredTime = 0;
+			if (falseTriggered) {
+				if (triggeredTime == 0.0) {
+					GetComponent <AudioSource> ().PlayOneShot (wrongSound);
+				}
+				triggeredTime += Time.deltaTime;
+				if (triggeredTime > 0.4) {
+					falseTriggered = false;
+					triggeredTime = 0;
 //>>>>>>> b95a5d3eecb07e7d00eaeb938b049f848d4802f8
+				}
+				animator.SetInteger ("State", 2);
 			}
-			animator.SetInteger("State",2);
+			if (triggered) {
+				triggeredTime += Time.deltaTime;
+				if (triggeredTime > 0.4) {
+					triggered = false;
+					triggeredTime = 0;
+				}
+				animator.SetInteger ("State", 2);
+			}
+		} else if (died && !finished) {
+			animator.SetInteger ("State", 6);
 		}
-		if (triggered) {
-			triggeredTime += Time.deltaTime;
-			if (triggeredTime > 0.4) {
-				triggered = false;
-				triggeredTime = 0;
-			}
-			animator.SetInteger ("State", 2);
+		if (died || finished) {
+			Test.text = "";
 		}
 
 		//move runner
@@ -205,11 +230,12 @@ public class Runner2D : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D col) {
 		if (col.gameObject.tag == "portal") {
 			//Debug.Log("Next Level");
+			finished = true;
 			Win(GetFinalScore());
 		}
 		jump = false;
 		fall = false;
-		Debug.Log("asdasd" + asd++);
+		//Debug.Log("asdasd" + asd++);
 		touchingPlatform = true;
 	}
 

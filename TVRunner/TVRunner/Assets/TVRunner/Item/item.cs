@@ -44,27 +44,46 @@ public class item : MonoBehaviour {
 		Debug.Log ("===================");
 		rnd = Random.Range (0, 2);
 		//random apakah item ini nanti benar atau salah
-		if (levelHandle.itemTrueGroup [group, 0] == 1) {
-			if (number % 2 == 0) { //genap
+		if (levelHandle.itemTrueGroup [group, 0, 0] == 1) {
+			if (levelHandle.itemTrueGroup [group, 0, 1] == 1) {
+				if (rnd == 0) {
+					type = false;
+					Debug.Log(number + " false1");
+					levelHandle.itemTrueGroup [group, 0, 1] = 0;
+				} 
+				else {
+					type = true;
+					Debug.Log(number + " true1");
+					levelHandle.itemTrueGroup [group, 0, 0] = 0;
+					levelHandle.itemTrueGroup [group, 0, 1] = 0;
+				}
+			}
+			else {
+				Debug.Log(number + " true2");
 				type = true;
-				Debug.Log(number + " true");
+				levelHandle.itemTrueGroup [group, 0, 1] = 0;
+			}
+			/*if (number % 2 == 0) { //genap
+				type = true;
+				Debug.Log(number + " true1" + levelHandle.itemTrueGroup [group, 0]);
 				levelHandle.itemTrueGroup [group, 0] = 0;
 			}
 			else {
 				if (rnd == 0) {
 					type = false;
-					Debug.Log(number + " false");
+					Debug.Log(number + " false1" + levelHandle.itemTrueGroup [group, 0]);
 				} 
 				else {
 					type = true;
-					Debug.Log(number + " true");
+					Debug.Log(number + " true2" + levelHandle.itemTrueGroup [group, 0]);
 					levelHandle.itemTrueGroup [group, 0] = 0;
 				}
-			}
+			}*/
 		} 
 		else {
-			Debug.Log(number + " false");
+			Debug.Log(number + " false2");
 			type = false;
+			levelHandle.itemTrueGroup [group, 0, 1] = 0;
 		}
 		Invoke("GetOperasi",0.01f);
 	}
@@ -99,7 +118,7 @@ public class item : MonoBehaviour {
 		if (type == true) {
 			scoreItem = 1000;
 			energyValue = levelHandle.nilaiBenar;
-			inOperasi = Random.Range (levelHandle.batasBoperasi, levelHandle.batasOperasi);
+			inOperasi = Random.Range (1, 2);
 			if (inOperasi == 1) {
 				bilangan1 = Random.Range (levelHandle.batasMin, playerr.playerValue+1);
 				bilangan2 = playerr.playerValue - bilangan1;

@@ -37,6 +37,7 @@ public class WorldMap : MonoBehaviour {
 				tmp[0].text = i + "";
 				//star
 				starPrnt[i].SetActive(true);
+				Debug.Log("highscore lv " + i + " = " + PlayerPrefs.GetFloat("Level " + i));
 				//number of star
 				if(PlayerPrefs.GetFloat("Level " + i) < 0.34 && PlayerPrefs.GetFloat("Level " + i) > 0) {
 					stars[i, 2].GetComponent<Image>().sprite = starShine;

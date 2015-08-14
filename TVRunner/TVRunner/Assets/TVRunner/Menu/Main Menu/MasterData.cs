@@ -101,6 +101,7 @@ public class MasterData : MonoBehaviour {
 			InitPlayerPrefs ();
 		} 
 		InitPlayerPrefs ();
+		SetScore ();
 		LoadFromFile();
 		currentLevel = 1;
 	}
