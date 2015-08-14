@@ -16,15 +16,16 @@ public class level : MonoBehaviour {
 	public int jumlahBenar;
 	public int jumlahSalah;
 	private string currentLevel;
-	public int[, ] itemTrueGroup = new int[100, 1];
+	public int[ , , ] itemTrueGroup = new int[100, 1, 2];
 	public int jumlahGroup;
-
-	// Use this for initialization
-	void Start () {
+	void Awake () {
 		currentLevel = Application.loadedLevelName;
 		Debug.Log (currentLevel);
 		batasBoperasi = 1;
 		LevelHandler ();
+	}
+	// Use this for initialization
+	void Start () {
 	}
 	
 	// Update is called once per frame
@@ -33,29 +34,33 @@ public class level : MonoBehaviour {
 	}
 
 	void InitTrueGroup(){
+		Debug.Log ("init");
 		for (int i = 1; i <= jumlahGroup; i++) {
-			itemTrueGroup[i, 0] = 1;
+			itemTrueGroup[i, 0, 0] = 1;
+			itemTrueGroup[i, 0, 1] = 1;
 		}
 	}
 
 	void LevelHandler(){
 		if (currentLevel == "Tutorial") {
 			bonusEnergy = 0;
-			energyDrain = 1;
+			energyDrain = 3;
 			batasPlayer = 4;
 			batasOperasi = 3;
 			nilaiBenar = 10;
-			nilaiSalah = -3;
+			nilaiSalah = -8;
 			batasMax = 10;
 			batasMin = 0;
 			jumlahBenar = 1;
 			jumlahSalah = 1;
-			scoreMax = 1000;
+			jumlahGroup = 1;
+			scoreMax = jumlahGroup * 1000;
+			InitTrueGroup();
 		}
 		else if (currentLevel == "Level 1") {
 			bonusEnergy = 0;
-			energyDrain = 0;
-			batasPlayer = 4;
+			energyDrain = 3;
+			batasPlayer = 9;
 			batasOperasi = 2;
 			nilaiBenar = 10;
 			nilaiSalah = -3;
@@ -63,8 +68,8 @@ public class level : MonoBehaviour {
 			batasMin = 0;
 			jumlahBenar = 2;
 			jumlahSalah = 2;
-			scoreMax = 2000;
 			jumlahGroup = 3;
+			scoreMax = jumlahGroup * 1000;
 			InitTrueGroup();
 		}
 		else if(currentLevel == "Level 2"){
@@ -78,8 +83,8 @@ public class level : MonoBehaviour {
 			batasMin = 0;
 			jumlahBenar = 2;
 			jumlahSalah = 2;
-			scoreMax = 2000;
 			jumlahGroup = 3;
+			scoreMax = jumlahGroup * 1000;
 			InitTrueGroup();
 		}
 		else if (currentLevel == "Level 3") {
@@ -93,8 +98,8 @@ public class level : MonoBehaviour {
 			batasMin = 0;
 			jumlahBenar = 2;
 			jumlahSalah = 2;
-			scoreMax = 2000;
 			jumlahGroup = 2;
+			scoreMax = jumlahGroup * 1000;
 			InitTrueGroup();
 		}
 		else if(currentLevel == "Level 4"){
