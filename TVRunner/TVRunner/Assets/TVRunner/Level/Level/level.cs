@@ -62,8 +62,8 @@ public class level : MonoBehaviour {
 			energyDrain = 6;
 			batasPlayer = 10;
 			batasOperasi = 3;
-			nilaiBenar = 50;
-			nilaiSalah = -5;
+			nilaiBenar = 60;
+			nilaiSalah = -7;
 			batasMax = 10;
 			batasMin = 0;
 			jumlahBenar = 2;
