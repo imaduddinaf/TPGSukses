@@ -1,4 +1,5 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Item\item.cs">
     <Files>
@@ -10,6 +11,15 @@
       <File FileName="Assets\TVRunner\Level\Level\level.cs" Line="90" Column="24" />
       <File FileName="Assets\TVRunner\Runner\player.cs" Line="69" Column="1" />
       <File FileName="Assets\TVRunner\Battery\healthbar.cs" Line="59" Column="5" />
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\TVRunner\Level\Level\level.cs">
+    <Files>
+      <File FileName="Assets\TVRunner\Item\item.cs" Line="24" Column="15" />
+      <File FileName="Assets\TVRunner\Battery\healthbar.cs" Line="38" Column="26" />
+      <File FileName="Assets\TVRunner\Level\Level\level.cs" Line="49" Column="18" />
+      <File FileName="Assets\TVRunner\Runner\player.cs" Line="62" Column="17" />
+>>>>>>> 288ec25979d8f30cb1d538fbc17a3c4b89acbd03
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -23,7 +23,7 @@ public class player : MonoBehaviour {
 		}
 		GameObject menuObj = GameObject.Find ("Menu");
 		menu = menuObj.GetComponent <IngameMenu>();
-		energy = 12;
+		energy = 100;
 		maxEnergy = energy;
 		/*if (Application.loadedLevelName == "Tutorial") 
 			InvokeRepeating("DecreaseBattery", 18f, 1f);
