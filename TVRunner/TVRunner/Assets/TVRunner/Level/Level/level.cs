@@ -74,16 +74,16 @@ public class level : MonoBehaviour {
 		}
 		else if(currentLevel == "Level 2"){
 			bonusEnergy = 0;
-			energyDrain = 1;
-			batasPlayer = 4;
-			batasOperasi = 2;
-			nilaiBenar = 10;
-			nilaiSalah = -3;
+			energyDrain = 3;
+			batasPlayer = 10;
+			batasOperasi = 3;
+			nilaiBenar = 50;
+			nilaiSalah = -15;
 			batasMax = 10;
 			batasMin = 0;
 			jumlahBenar = 2;
 			jumlahSalah = 2;
-			jumlahGroup = 3;
+			jumlahGroup = 5;
 			scoreMax = jumlahGroup * 1000;
 			InitTrueGroup();
 		}
